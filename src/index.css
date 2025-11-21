@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "@fontsource-variable/orbitron";
+@import "@fontsource-variable/lexend";
+
+@theme {
+    --color-btn-light: #C9F4D7;
+    --color-btn-dark: #13ED5B;
+    --font-orbitron: "Orbitron Variable", sans-serif;
+    --font-lexend: "Lexend Variable", sans-serif;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(7rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animated-button {
+  animation: moveUp 1s ease-out forwards;
+  font-family: var(--font-orbitron), sans-serif;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.animated-button:hover {
+  animation: moveUp 0.5s ease-in-out forwards;
+}
