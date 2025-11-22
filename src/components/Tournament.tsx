@@ -1,4 +1,4 @@
-import { tournament } from '../lib/tournament'
+import { tournament } from '@lib/tournament'
 
 export const Tournament = () => {
   return (
@@ -13,7 +13,7 @@ export const Tournament = () => {
         {tournament.slice(0, 2).map((tournament, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-end bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-[500px] h-full relative group cursor-pointer"
+            className="flex flex-col justify-center items-end bg-white rounded-xl overflow-hidden transition w-[500px] h-full relative group cursor-pointer"
           >
             <div className="relative">
                 <img
