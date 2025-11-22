@@ -1,21 +1,21 @@
-import { FiClock } from "react-icons/fi";
-import { LuBadgeCheck } from "react-icons/lu";
-import { FiMap } from "react-icons/fi";
+import { IoSearch } from "react-icons/io5";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { GiSoccerBall } from "react-icons/gi";
 
 export const experience = [
     {
-        title: "Fácil y rápido",
-        description: "Encuentra y reserva tu cancha ideal en menos de 3 pasos.",
-        icon: <FiClock />
+        title: "Busca",
+        description: "Encuentra la cancha perfecta usando nuestra barra de búsqueda.",
+        icon: <IoSearch />
     },
     {
-        title: "Confirmación Inmediata",
-        description: "Recibe tu confirmación al instante y asegura tu lugar.",
-        icon: <LuBadgeCheck />
+        title: "Reserva",
+        description: "Selecciona la hora que más te convenga y confirma tu reserva.",
+        icon: <FaRegCalendarAlt />
     },
     {
-        title: "Variedad de canchas",
-        description: "Explora la más amplia selección de canchas disponibles.",
-        icon: <FiMap />
+        title: "Juega",
+        description: "Listo! Preséntate en la cancha a la hora acordada y disfruta del partido .",
+        icon: <GiSoccerBall />
     }
 ]
