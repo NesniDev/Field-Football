@@ -2,7 +2,7 @@ import { tournament } from '../lib/tournament'
 
 export const Tournament = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto my-20">
       <h2 className="text-5xl font-bold capitalize text-center mb-6">
         Torneos Disponibles
       </h2>

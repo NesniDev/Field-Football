@@ -4,11 +4,11 @@ export const Hero = () => {
     const styles = {
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url(/images/hero.avif)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'bottom',
         // backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        height: '100vh',
+        height: '700px',
     };
     return (
         <section className="text-white" style={styles}>

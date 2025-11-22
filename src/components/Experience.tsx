@@ -2,8 +2,8 @@ import { experience } from "../lib/experience"
 
 export const Experience = () => {
     return (
-        <section className="container mx-auto flex flex-col items-center justify-center gap-y-4 my-14">
-            <h2 className="text-5xl font-bold capitalize text-center">¿Por Qué Reservar con Nosotros?</h2>
+        <section className="container mx-auto flex flex-col items-center justify-center gap-y-4 my-20">
+            <h2 className="text-4xl font-bold capitalize text-center">¿Por Qué Reservar con Nosotros?</h2>
             <p className="text-center text-gray-600/70">Te ofrecemos la mejor experiencia para que solo te preocupes por jugar.</p>
             <div className="flex justify-center gap-4 items-center flex-wrap mt-6">
                     {experience.map((item, index) => (
