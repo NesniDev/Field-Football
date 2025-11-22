@@ -12,7 +12,7 @@ export const Hero = () => {
     };
     return (
         <section className="text-white" style={styles}>
-            <Header />
+            <Header color="white" />
             <div className="flex flex-col justify-center gap-3 container max-w-3xl mx-auto h-full text-center">
                 <h1 className="text-5xl font-bold capitalize" >Tu próximo partido empieza aquí. Encuentra y reserva tu cancha ideal.</h1>
                 <p className="text-sm">Reserva tu cancha favorita.</p>

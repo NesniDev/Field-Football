@@ -1,18 +1,47 @@
-export const Header = () => {
-    return (
-        <header className="p-4 text-gray-100">
-            <nav className="flex justify-between items-center container mx-auto ">
-                <a href="/"><img src="vite.svg" alt="Logo" /></a>
-                <ul className="flex gap-4 font-semibold text-gray-100 ">
-                    <li><a href="/" className="hover:text-gray-100/70 transition">Canchas</a></li>
-                    <li><a href="/" className="hover:text-gray-100/70 transition">Reservas</a></li>
-                    <li><a href="/" className="hover:text-gray-100/70 transition">Eventos</a></li>
-                    <li><a href="/" className="hover:text-gray-100/70 transition">Contacto</a></li>
-                </ul>
-                <div className="flex gap-2 font-semibold text-sm text-gray-800">
-                    <a href="/" className="px-3 py-2 rounded-lg bg-btn-dark hover:bg-btn-dark/70 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark">Iniciar Sesión</a>
-                </div>
-            </nav>
-        </header>
-    )
+import { NavLink } from 'react-router-dom'
+
+interface HeaderProps {
+    color?: string
+}
+
+export const Header = ({color}: HeaderProps) => {
+  return (
+    <header className={`p-4 `}>
+      <nav className="flex justify-between items-center container mx-auto ">
+        <NavLink to="/">
+          <img src="vite.svg" alt="Logo" />
+        </NavLink>
+        <ul className={`flex gap-4 font-semibold ${color === 'white' ? 'text-gray-100' : 'text-gray-800'}`}>
+          <li>
+            <NavLink to="/field" className="hover:text-gray-100/70 transition">
+              Canchas
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservations" className="hover:text-gray-100/70 transition">
+              Reservas
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/events" className="hover:text-gray-100/70 transition">
+              Eventos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className="hover:text-gray-100/70 transition">
+              Contacto
+            </NavLink>
+          </li>
+        </ul>
+        <div className="flex gap-2 font-semibold text-sm text-gray-800">
+          <NavLink
+            to="/"
+            className="px-3 py-2 rounded-lg bg-btn-dark hover:bg-btn-dark/70 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark"
+          >
+            Iniciar Sesión
+          </NavLink>
+        </div>
+      </nav>
+    </header>
+  )
 }
