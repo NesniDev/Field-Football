@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-        <footer className="container px-10 py-4">
+        <footer className="container mx-auto px-10 py-4">
             <div className="flex justify-between items-center gap-4 text-gray-500/90 text-xs">
                 <p className="">© {new Date().getFullYear()} Canchas Futbol Chiquinquirá. Todos los derechos reservados.</p>
                 <div className="flex justify-between items-center gap-4">
