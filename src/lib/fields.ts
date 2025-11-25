@@ -22,7 +22,7 @@ export const fields = [
         'Servicio de árbitros certificados'
       ],
     punctuation: '5.0',
-    price: '60.000/hr',
+    price: '60.000',
     ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
@@ -49,7 +49,7 @@ export const fields = [
         'Servicio de primeros auxilios'
       ],
     punctuation: '5.0',
-    price: '60.000/hr',
+    price: '60.000',
     ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
@@ -76,7 +76,7 @@ export const fields = [
         'Área VIP con vista privilegiada'
       ],
     punctuation: '5.0',
-    price: '60.000/hr',
+    price: '60.000',
     ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
@@ -104,7 +104,7 @@ export const fields = [
         'WiFi gratuito'
       ],
     punctuation: '5.0',
-    price: '60.000/hr',
+    price: '60.000',
     ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   }
 ]

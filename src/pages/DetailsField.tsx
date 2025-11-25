@@ -41,7 +41,7 @@ export const DetailsField = () => {
         <aside className='flex flex-col gap-2 bg-white p-8 rounded-lg'>
             <div className='flex flex-col gap-1'>
                 <span className='whitespace-nowrap text-xl font-bold capitalize'>Seleccionar fecha y hora</span>
-                <span className='text-sm text-gray-500'>Precio por hora: ${info.price.split('/')[0]} COP</span>
+                <span className='text-sm text-gray-500'>Precio por hora: ${info.price} COP</span>
             </div>
         </aside>
       </main>
