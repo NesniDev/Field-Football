@@ -11,7 +11,8 @@ export const fields = [
       dimensions: '40m x 20m',
       lighting: 'Sistema de iluminación LED de alta potencia',
       availability: 'Lunes a Domingo: 6:00 AM - 10:00 PM',
-      services: [
+    },
+    services: [
         'Vestuarios con duchas',
         'Almacén de bebidas y snacks',
         'Alquiler de balones y petos',
@@ -19,10 +20,10 @@ export const fields = [
         'Sistema de sonido ambiental',
         'Área de descanso con sillas y mesas',
         'Servicio de árbitros certificados'
-      ]
-    },
+      ],
     punctuation: '5.0',
-    price: '60.000/hr'
+    price: '60.000/hr',
+    ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
     image: '/images/cancha-2.avif',
@@ -37,7 +38,8 @@ export const fields = [
       lighting: 'Torres de iluminación de 2000W',
       availability:
         'Lunes a Sábado: 7:00 AM - 11:00 PM, Domingo: 8:00 AM - 9:00 PM',
-      services: [
+    },
+    services: [
         'Vestuarios con duchas y baños',
         'Tienda de artículos deportivos',
         'Servicio de hidratación',
@@ -45,10 +47,10 @@ export const fields = [
         'Cámaras de seguridad 24/7',
         'Área de calentamiento',
         'Servicio de primeros auxilios'
-      ]
-    },
+      ],
     punctuation: '5.0',
-    price: '60.000/hr'
+    price: '60.000/hr',
+    ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
     image: '/images/cancha-3.avif',
@@ -62,7 +64,8 @@ export const fields = [
       dimensions: '44m x 24m',
       lighting: 'Sistema de iluminación profesional para transmisiones',
       availability: 'Todos los días: 5:00 AM - 12:00 AM',
-      services: [
+    },
+    services: [
         'Amplio estacionamiento privado',
         'Restaurante y bar temático',
         'Cabinas de transmisión',
@@ -71,10 +74,10 @@ export const fields = [
         'Alquiler de equipos profesionales',
         'Sistema de riego automático',
         'Área VIP con vista privilegiada'
-      ]
-    },
+      ],
     punctuation: '5.0',
-    price: '60.000/hr'
+    price: '60.000/hr',
+    ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   },
   {
     image: '/images/cancha-4.avif',
@@ -89,7 +92,8 @@ export const fields = [
       lighting: 'Iluminación de 1800 lúmenes',
       availability:
         'Lunes a Viernes: 6:00 AM - 11:00 PM, Fines de semana: 7:00 AM - 10:00 PM',
-      services: [
+    },
+    services: [
         'Sistema de reservas en línea',
         'Tienda de artículos deportivos',
         'Servicio de cafetería',
@@ -98,9 +102,9 @@ export const fields = [
         'Servicio de fotografía deportiva',
         'Parrilla y zona de asados',
         'WiFi gratuito'
-      ]
-    },
+      ],
     punctuation: '5.0',
-    price: '60.000/hr'
+    price: '60.000/hr',
+    ubication: 'https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469'
   }
 ]
