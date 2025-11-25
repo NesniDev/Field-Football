@@ -1,11 +1,9 @@
 import { fields } from "@lib/fields"
-import { Header } from "@components/common/Header"
-import { NavLink } from "react-router-dom"
+import { NavLink} from "react-router-dom"
 
 export const Fields = () => {
     return (
         <>
-            <Header color="change"/>
             <div className="container mx-auto">
                 <form className="flex flex-col justify-center items-center gap-2 max-w-md mx-auto mt-8">
                     <div className="flex gap-1">
@@ -24,12 +22,15 @@ export const Fields = () => {
                 <section className="flex flex-wrap items-center justify-center gap-4 my-8">
                     {
                         fields.map((field, index) => (
-                            <NavLink to="/field" key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
+
+                            <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
                                 <img src={field.image} alt={field.title} className="w-64 h-72 object-cover group-hover:scale-110 transition duration-800"/>
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
+                                <div>
                                 <div className="absolute bottom-4 left-4 ">
                                     <h2 className="text-xl font-semibold text-white">{field.title}</h2>
                                     <p className="text-xs text-gray-200/60">{field.address}</p>
+                                </div>
                                 </div>
                             </NavLink>
                         ))

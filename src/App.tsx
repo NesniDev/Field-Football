@@ -1,5 +1,5 @@
 
-import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { useRoutes,  useLocation } from 'react-router-dom'
 import { Home } from '@pages/Home'
 import { Reservations } from '@pages/Reservations'
 import { Fields } from '@pages/Fields'
@@ -7,6 +7,9 @@ import { Events } from '@pages/Events'
 import { Contact } from '@pages/Contact'
 import { NotFound } from '@pages/NotFound'
 import { Footer } from '@components/common/Footer'
+import { DetailsField } from './pages/DetailsField'
+import { Header } from './components/common/Header'
+import { Hero } from './components/Home/Hero'
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -33,6 +36,10 @@ const AppRoutes = () => {
     {
       path: '*',
       element: <NotFound />
+    },
+    {
+      path: '/field/:slug',
+      element: <DetailsField />
     }
 
   ])
@@ -41,11 +48,12 @@ const AppRoutes = () => {
 }
 
 function App() {
+  const {pathname} = useLocation();
+  console.log(pathname);
   return (
     <>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      {pathname === '/' ? <Hero /> : <Header color="change"/>}
+      <AppRoutes />
       <Footer />
     </>
   )

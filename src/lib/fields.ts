@@ -2,6 +2,7 @@ export const fields = [
     {
         image: "images/cancha-1.avif",
         title: "El Barcelona",
+        slug: "el-barcelona",
         address: "Barrio Surinema",
         punctuation: "5.0",
         price: "60.000/hr",
@@ -9,6 +10,7 @@ export const fields = [
     {
         image: "images/cancha-2.avif",
         title: "La Fiera",
+        slug: "la-fiera",
         address: "Barrio la pola",
         punctuation: "5.0",
         price: "60.000/hr",
@@ -16,13 +18,15 @@ export const fields = [
     {
         image: "images/cancha-3.avif",
         title: "Camelot",
+        slug: "camelot",
         address: "Centro de eventos Camelot",
         punctuation: "5.0",
         price: "60.000/hr",
     },
     {
         image: "images/cancha-4.avif",
-        title: "la Futbolera",
+        title: "La Futbolera",
+        slug: "la-futbolera",
         address: "Avenida Julio Salazar",
         punctuation: "5.0",
         price: "60.000/hr",
@@ -30,6 +34,7 @@ export const fields = [
     {
         image: "images/cancha-1.avif",
         title: "El Barcelona",
+        slug: "el-barcelona",
         address: "Barrio Surinema",
         punctuation: "5.0",
         price: "60.000/hr",
@@ -37,6 +42,7 @@ export const fields = [
     {
         image: "images/cancha-2.avif",
         title: "La Fiera",
+        slug: "la-fiera",
         address: "Barrio la pola",
         punctuation: "5.0",
         price: "60.000/hr",
@@ -44,13 +50,15 @@ export const fields = [
     {
         image: "images/cancha-3.avif",
         title: "Camelot",
+        slug: "camelot",
         address: "Centro de eventos Camelot",
         punctuation: "5.0",
         price: "60.000/hr",
     },
     {
         image: "images/cancha-4.avif",
-        title: "la Futbolera",
+        title: "La Futbolera",
+        slug: "la-futbolera",
         address: "Avenida Julio Salazar",
         punctuation: "5.0",
         price: "60.000/hr",
