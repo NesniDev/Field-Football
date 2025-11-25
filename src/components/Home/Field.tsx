@@ -11,7 +11,7 @@ export const Field = () => {
         {fields.slice(0, 3).map((field, index) => (
           <div
             key={index}
-            className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-[350px] h-auto"
+            className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-80 h-auto"
           >
             <img
               src={field.image}

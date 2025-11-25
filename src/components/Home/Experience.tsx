@@ -13,7 +13,7 @@ export const Experience = () => {
                             </span>
                             <div className="text-center">
                                 <h3 className="text-2xl font-bold">{item.title}</h3>
-                                <p className="text-center text-gray-800/50 text-sm max-w-[335px]">{item.description}</p>
+                                <p className="text-center text-gray-800/50 text-sm max-w-64">{item.description}</p>
                             </div>
                         </div>
                     ))}

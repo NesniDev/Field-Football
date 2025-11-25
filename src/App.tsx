@@ -49,7 +49,6 @@ const AppRoutes = () => {
 
 function App() {
   const {pathname} = useLocation();
-  console.log(pathname);
   return (
     <>
       {pathname === '/' ? <Hero /> : <Header color="change"/>}

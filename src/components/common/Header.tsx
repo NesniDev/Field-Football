@@ -6,10 +6,10 @@ interface HeaderProps {
 
 export const Header = ({color}: HeaderProps) => {
   return (
-    <header className={`px-4`}>
+    <header className={`px-4 max-w-5xl mx-auto`}>
       <nav className="flex justify-between items-center container mx-auto ">
         <NavLink to="/">
-          <img src="balon.webp" alt="Logo" className='size-18'/>
+          <img src="/balon.webp" alt="Logo" className='size-18'/>
         </NavLink>
         <ul className={`flex gap-4 font-semibold ${color === 'white' ? 'text-gray-100' : 'text-gray-800'}`}>
           <li>
