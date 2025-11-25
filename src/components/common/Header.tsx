@@ -13,7 +13,7 @@ export const Header = ({color}: HeaderProps) => {
         </NavLink>
         <ul className={`flex gap-4 font-semibold ${color === 'white' ? 'text-gray-100' : 'text-gray-800'}`}>
           <li>
-            <NavLink to="/field" className="hover:text-gray-100/70 transition">
+            <NavLink to="/fields" className="hover:text-gray-100/70 transition">
               Canchas
             </NavLink>
           </li>

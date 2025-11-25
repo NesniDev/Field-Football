@@ -1,4 +1,5 @@
 import { fields } from '@lib/fields'
+import { NavLink } from 'react-router-dom'
 
 export const Field = () => {
   return (
@@ -50,7 +51,7 @@ export const Field = () => {
         ))}
       </div>
       <div className="flex justify-center mt-4">
-        <button className="group relative w-auto cursor-pointer overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 text-center font-medium text-gray-900 shadow-sm transition-all duration-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:hover:border-gray-700">
+        <NavLink to="/fields" className="group relative w-auto cursor-pointer overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 text-center font-medium text-gray-900 shadow-sm transition-all duration-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:hover:border-gray-700">
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-gray-900 transition-all duration-300 group-hover:scale-[100.8] dark:bg-btn-dark" />
             <span className="inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
@@ -82,7 +83,7 @@ export const Field = () => {
               </svg>
             </div>
           </div>
-        </button>
+        </NavLink>
       </div>
     </section>
   )

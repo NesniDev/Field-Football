@@ -2,7 +2,7 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import { Home } from '@pages/Home'
 import { Reservations } from '@pages/Reservations'
-import { Fields } from '@pages/Fields'
+import { Fields } from '@pages/fields'
 import { Events } from '@pages/Events'
 import { Contact } from '@pages/Contact'
 import { NotFound } from '@pages/NotFound'
@@ -19,7 +19,7 @@ const AppRoutes = () => {
       element: <Reservations />
     },
     {
-      path: '/field',
+      path: '/fields',
       element: <Fields />
     },
     {
