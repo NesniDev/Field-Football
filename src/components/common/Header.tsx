@@ -13,22 +13,22 @@ export const Header = ({color}: HeaderProps) => {
         </NavLink>
         <ul className={`flex gap-4 font-semibold ${color === 'white' ? 'text-gray-100' : 'text-gray-800'}`}>
           <li>
-            <NavLink to="/fields" className="hover:text-gray-100/70 transition">
+            <NavLink to="/fields" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
               Canchas
             </NavLink>
           </li>
           <li>
-            <NavLink to="/reservations" className="hover:text-gray-100/70 transition">
+            <NavLink to="/reservations" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
               Reservas
             </NavLink>
           </li>
           <li>
-            <NavLink to="/events" className="hover:text-gray-100/70 transition">
+            <NavLink to="/events" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
               Eventos
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className="hover:text-gray-100/70 transition">
+            <NavLink to="/contact" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
               Contacto
             </NavLink>
           </li>
