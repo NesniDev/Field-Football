@@ -3,7 +3,7 @@ import { useRoutes,  useLocation } from 'react-router-dom'
 import { Home } from '@pages/Home'
 import { Reservations } from '@pages/Reservations'
 import { Fields } from '@pages/Fields'
-import { Events } from '@pages/Events'
+import { Tournaments } from '@pages/Tournaments'
 import { Contact } from '@pages/Contact'
 import { NotFound } from '@pages/NotFound'
 import { Footer } from '@components/common/Footer'
@@ -27,7 +27,7 @@ const AppRoutes = () => {
     },
     {
       path: '/tournaments',
-      element: <Events />
+      element: <Tournaments />
     },
     {
       path: '/contact',
