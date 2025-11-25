@@ -1,12 +1,12 @@
 
 import { useRoutes, BrowserRouter } from 'react-router-dom'
-import { Home } from './components/pages/Home'
-import { Reservations } from './components/pages/Reservations'
-import { Field } from './components/pages/Field'
-import { Events } from './components/pages/Events'
-import { Contact } from './components/pages/Contact'
-import { NotFound } from './components/pages/NotFound'
-import { Footer } from './components/Footer'
+import { Home } from '@pages/Home'
+import { Reservations } from '@pages/Reservations'
+import { Fields } from '@pages/Fields'
+import { Events } from '@pages/Events'
+import { Contact } from '@pages/Contact'
+import { NotFound } from '@pages/NotFound'
+import { Footer } from '@/components/common/Footer'
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -20,7 +20,7 @@ const AppRoutes = () => {
     },
     {
       path: '/field',
-      element: <Field />
+      element: <Fields />
     },
     {
       path: '/events',

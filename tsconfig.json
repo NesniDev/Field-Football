@@ -6,6 +6,7 @@
       "@lib/*": ["src/lib/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
+      "@pages/*": ["src/pages/*"],
     }
   },
   "files": [],
