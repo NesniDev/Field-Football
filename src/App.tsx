@@ -6,7 +6,7 @@ import { Fields } from '@pages/Fields'
 import { Events } from '@pages/Events'
 import { Contact } from '@pages/Contact'
 import { NotFound } from '@pages/NotFound'
-import { Footer } from '@/components/common/Footer'
+import { Footer } from '@components/common/Footer'
 
 const AppRoutes = () => {
   const routes = useRoutes([
