@@ -1,5 +1,5 @@
 import { fields } from '@lib/fields'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 export const Field = () => {
   return (
@@ -40,12 +40,12 @@ export const Field = () => {
               </div>
             </div>
             <div className="flex flex-col px-3 py-2 mx-auto ">
-              <a
-                href="/"
+              <NavLink
+                to={`/field/${field.slug}`}
                 className=" block mx-auto bg-btn-dark hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg"
               >
                 Reservar
-              </a>
+              </NavLink>
             </div>
           </div>
         ))}
