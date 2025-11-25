@@ -26,7 +26,7 @@ const AppRoutes = () => {
       element: <Fields />
     },
     {
-      path: '/events',
+      path: '/tournaments',
       element: <Events />
     },
     {

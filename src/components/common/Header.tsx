@@ -23,8 +23,8 @@ export const Header = ({color}: HeaderProps) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/events" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
-              Eventos
+            <NavLink to="/tournaments" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
+              Torneos
             </NavLink>
           </li>
           <li>
