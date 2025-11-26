@@ -19,7 +19,7 @@ export const Fields = () => {
                         </select>
                     </div>
                 </form>
-                <section className="flex flex-wrap items-center justify-center gap-4 my-8">
+                <section className="flex flex-wrap items-center justify-center gap-4 my-8 font-orbitron">
                     {
                         fields.map((field, index) => (
 
