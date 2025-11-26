@@ -1,6 +1,7 @@
-import { fields } from '@lib/fields'
+import { fields } from '@/lib/fields'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Calendar } from '@/components/ui/calendar'
 
 export const DetailsField = () => {
   const { slug } = useParams()
@@ -9,6 +10,7 @@ export const DetailsField = () => {
 
   if(!info) return <p>Info no encontrada</p>
   
+   const [date, setDate] = useState(new Date())
   return (
     <>
       <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
@@ -42,6 +44,15 @@ export const DetailsField = () => {
             <div className='flex flex-col gap-1'>
                 <span className='whitespace-nowrap text-xl font-bold capitalize'>Seleccionar fecha y hora</span>
                 <span className='text-sm text-gray-500'>Precio por hora: ${info.price} COP</span>
+            </div>
+            <div>
+              <Calendar
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                className="rounded-md border shadow-sm"
+                captionLayout="dropdown"
+              />
             </div>
         </aside>
       </main>
