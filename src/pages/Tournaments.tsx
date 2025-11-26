@@ -1,53 +1,75 @@
-import { fields } from "@lib/fields"
-import { NavLink } from "react-router-dom"
+import { tournament } from '@lib/tournament'
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
+import { GiTrophy } from "react-icons/gi";
 
 export const Tournaments = () => {
-    return (
-        <div>
-            <h1>Explora Nuestros Torneos</h1>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-                {fields.slice(0, 3).map((field, index) => (
-                    <div
-                    key={index}
-                    className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-80 h-auto"
+  return (
+    <section className="max-w-3xl mx-auto mt-5">
+      <h1 className="my-5 text-3xl font-bold">Explora Nuestros Torneos</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center mb-10 gap-5">
+        {tournament.map((tournament, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-62 h-full"
+          >
+            <img
+              src={tournament.image}
+              alt={tournament.title}
+              loading="lazy"
+              className="w-full h-40 object-cover"
+            />
+            <div className="flex flex-col items-center gap-4 w-full px-3 flex-1">
+              <div className="flex justify-between items-center gap-2 w-full mx-3 flex-1 ">
+                <div className="py-2 flex flex-col gap-2">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`text-[9px] rounded-lg px-2 py-1 font-bold ${
+                        tournament.availability === 'Abierto'
+                          ? 'inline-flex items-center rounded-md bg-green-400/10 px-2 py-1 font-medium text-green-400 inset-ring inset-ring-green-500/20'
+                          : tournament.availability === 'Últimos cupos'
+                          ? 'inline-flex items-center rounded-md bg-red-400/10 px-2 py-1 font-medium text-red-400 inset-ring inset-ring-red-500/20'
+                          : tournament.availability === 'Finalizado'
+                          ? 'inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 font-medium text-gray-400 inset-ring inset-ring-gray-400/20'
+                          : ''
+                      }`}
                     >
-                    <img
-                        src={field.image}
-                        alt={field.title}
-                        loading="lazy"
-                        className="w-full h-40 object-cover"
-                    />
-                    <div className="flex flex-col items-center gap-4 w-full px-3">
-                        <div className='flex justify-between items-center gap-2 w-full mx-3 flex-1 '>
-                        <div className="py-2 flex flex-col ">
-                            <h3 className="text-lg font-semibold capitalize">
-                            {field.title}
-                            </h3>
-                            <p className="text-gray-500/90 text-xs">{field.address}</p>
-                        </div>
-                        <div className="px-2 py-1 bg-btn-dark/10 rounded-xl">
-                            <span className="text-sm text-btn-dark/70 font-bold flex items-center whitespace-nowrap">
-                            ☆ {field.punctuation}
-                            </span>
-                        </div>
-                        </div>
-                        <div className='flex flex-col justify-start font-semibold font-lexend items-start w-full flex-1'>
-                        <hr className="w-full text-gray-400/20" />
-                        <span className="text-xs text-gray-500/50 mt-2">Lunes a Domingo</span>
-                        <span className="text-sm">Desde ${field.price}</span>
-                        </div>
-                    </div>
-                    <div className="flex flex-col px-3 py-2 mx-auto ">
-                        <NavLink
-                        to={`/field/${field.slug}`}
-                        className=" block mx-auto bg-btn-dark hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg"
-                        >
-                        Reservar
-                        </NavLink>
-                    </div>
-                    </div>
-                ))}
+                      {tournament.availability}
+                    </span>
+                    <span
+                      className={`text-[9px] rounded-lg px-2 py-1 font-bold ${
+                        tournament.genre === 'Femenino'
+                          ? 'inline-flex items-center rounded-md bg-rose-400/10 px-2 py-1 font-medium text-rose-400 inset-ring inset-ring-rose-500/20'
+                          : tournament.genre === 'Masculino'
+                          ? 'inline-flex items-center rounded-md bg-amber-400/10 px-2 py-1 font-medium text-amber-400 inset-ring inset-ring-amber-500/20'
+                          : tournament.genre === 'Mixto'
+                          ? 'inline-flex items-center rounded-md bg-blue-400/10 px-2 py-1 font-medium text-blue-400 inset-ring inset-ring-blue-400/20'
+                          : ''
+                      }`}
+                    >
+                      {tournament.genre}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-semibold capitalize">
+                    {tournament.title}
+                  </h3>
+                  <div className='flex flex-col gap-2'>
+                    <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><FaRegCalendarAlt /> {tournament.date}</span>
+                    <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><MdLocationPin /> {tournament.location}</span>
+                    <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><GiTrophy /> Precio: ${tournament.income}</span>
+                  </div>
                 </div>
-        </div>
-    )
+              </div>
+              
+            </div>
+            <div className="flex flex-col px-3 py-2 mx-auto">
+              <button className="block mx-auto cursor-pointer bg-btn-dark hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg">
+                Inscribirse
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
 }
