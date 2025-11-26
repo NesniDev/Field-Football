@@ -10,11 +10,13 @@ export const DetailsField = () => {
 
   if(!info) return <p>Info no encontrada</p>
   
-   const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(
+    new Date(2025, 5, 12)
+  )
   return (
     <>
       <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
-        <section className='flex-1 flex flex-col gap-2'>
+        <section className='flex flex-col gap-2 w-full'>
           <img src={info.image} alt={info.title} className='h-[430px] w-full object-cover rounded-xl' />
           <div className='flex flex-col gap-1 my-5'>
             <span className='whitespace-nowrap text-xl font-bold capitalize'>Cancha Sintética {info.title}</span>
@@ -40,7 +42,7 @@ export const DetailsField = () => {
             {activeTab === 'ubication' && <iframe src={info.ubication} width="600" height="450" loading="lazy" className='w-full rounded-2xl'></iframe>}
           </div>
         </section>
-        <aside className='flex flex-col gap-2 bg-white p-8 rounded-lg'>
+        <aside className='flex flex-col gap-2 bg-white p-8 rounded-lg h-full'>
             <div className='flex flex-col gap-1'>
                 <span className='whitespace-nowrap text-xl font-bold capitalize'>Seleccionar fecha y hora</span>
                 <span className='text-sm text-gray-500'>Precio por hora: ${info.price} COP</span>
@@ -50,10 +52,33 @@ export const DetailsField = () => {
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border shadow-sm"
-                captionLayout="dropdown"
+                className="rounded-lg border [--cell-size:--spacing(9)] md:[--cell-size:--spacing(10)] my-5"
+                buttonVariant="ghost"
               />
             </div>
+            <h2>Horario Disponible</h2>
+            <div className='flex flex-wrap justify-between items-center gap-2'>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>15:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>16:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>17:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>18:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>19:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>20:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>21:00</button>
+              <button className='px-4 py-2 rounded-lg transition bg-gray-950 text-white text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border'>22:00</button>
+            </div>
+            <hr className='my-4'/>
+            <div>
+              <div className='flex justify-between items-center'>
+                <span className='font-bold text-xs'>Selección:</span>
+                <span className='text-gray-600'>{date.toLocaleDateString()}</span>
+              </div>
+              <div className='flex justify-between items-center gap-5'>
+                <span className='font-bold text-lg'>Total:</span>
+                <span className='text-green-400 text-lg'>${info.price}</span>
+              </div>
+            </div>
+            <button className='w-full bg-green-600 text-white py-2 rounded-lg mt-5'>Reservar</button>
         </aside>
       </main>
     </>
