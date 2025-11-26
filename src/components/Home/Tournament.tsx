@@ -1,4 +1,4 @@
-import { tournament } from '@lib/tournament'
+import { tournament } from '@/lib/tournament'
 
 export const Tournament = () => {
   return (
@@ -44,7 +44,7 @@ export const Tournament = () => {
                     {tournament.title}
                 </h3>
                 <p className="text-xs text-gray-100/50 ">
-                    {tournament.description}
+                    {tournament.location}
                 </p>
             </div>
           </div>

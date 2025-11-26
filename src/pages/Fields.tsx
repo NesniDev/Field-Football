@@ -1,4 +1,4 @@
-import { fields } from "@lib/fields"
+import { fields } from "@/lib/fields"
 import { NavLink} from "react-router-dom"
 
 export const Fields = () => {

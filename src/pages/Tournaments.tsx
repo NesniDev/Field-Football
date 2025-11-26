@@ -1,4 +1,4 @@
-import { tournament } from '@lib/tournament'
+import { tournament } from '@/lib/tournament'
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { GiTrophy } from "react-icons/gi";
