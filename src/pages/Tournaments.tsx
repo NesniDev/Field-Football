@@ -22,7 +22,7 @@ export const Tournaments = () => {
             <div className="flex flex-col items-center gap-4 w-full px-3 flex-1">
               <div className="flex justify-between items-center gap-2 w-full mx-3 flex-1 ">
                 <div className="py-2 flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 font-orbitron">
                     <span
                       className={`text-[9px] rounded-lg px-2 py-1 font-bold ${
                         tournament.availability === 'Abierto'
@@ -31,6 +31,8 @@ export const Tournaments = () => {
                           ? 'inline-flex items-center rounded-md bg-red-400/10 px-2 py-1 font-medium text-red-400 inset-ring inset-ring-red-500/20'
                           : tournament.availability === 'Finalizado'
                           ? 'inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 font-medium text-gray-400 inset-ring inset-ring-gray-400/20'
+                          : tournament.availability === 'Próximamente'
+                          ? 'inline-flex items-center rounded-md bg-teal-400/10 px-2 py-1 font-medium text-teal-400 inset-ring inset-ring-teal-500/20'
                           : ''
                       }`}
                     >
@@ -50,7 +52,7 @@ export const Tournaments = () => {
                       {tournament.genre}
                     </span>
                   </div>
-                  <h3 className="text-base font-semibold capitalize">
+                  <h3 className="text-base font-semibold capitalize font-orbitron">
                     {tournament.title}
                   </h3>
                   <div className='flex flex-col gap-2'>

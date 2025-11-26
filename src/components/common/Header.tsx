@@ -7,7 +7,7 @@ interface HeaderProps {
 export const Header = ({color}: HeaderProps) => {
   return (
     <header className={`px-4 max-w-5xl mx-auto`}>
-      <nav className="flex justify-between items-center container mx-auto ">
+      <nav className="flex justify-between items-center container mx-auto font-orbitron">
         <NavLink to="/">
           <img src="/balon.webp" alt="Logo" className='size-18'/>
         </NavLink>

@@ -12,7 +12,7 @@ export const Experience = () => {
                                 {item.icon}
                             </span>
                             <div className="text-center">
-                                <h3 className="text-2xl font-bold">{item.title}</h3>
+                                <h3 className="text-2xl font-bold font-orbitron mb-2">{item.title}</h3>
                                 <p className="text-center text-gray-800/50 text-sm max-w-64">{item.description}</p>
                             </div>
                         </div>

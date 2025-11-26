@@ -19,7 +19,7 @@ export const Field = () => {
               loading="lazy"
               className="w-full h-40 object-cover"
             />
-            <div className="flex flex-col items-center gap-4 w-full px-3">
+            <div className="flex flex-col items-center gap-4 w-full px-3 font-orbitron">
               <div className='flex justify-between items-center gap-2 w-full mx-3 flex-1 '>
                 <div className="py-2 flex flex-col ">
                   <h3 className="text-lg font-semibold capitalize">
@@ -33,13 +33,13 @@ export const Field = () => {
                   </span>
                 </div>
               </div>
-              <div className='flex flex-col justify-start font-semibold font-lexend items-start w-full flex-1'>
+              <div className='flex flex-col justify-start font-semibold items-start w-full flex-1 '>
                 <hr className="w-full text-gray-400/20" />
                 <span className="text-xs text-gray-500/50 mt-2">Lunes a Domingo</span>
                 <span className="text-sm">Desde ${field.price}</span>
               </div>
             </div>
-            <div className="flex flex-col px-3 py-2 mx-auto ">
+            <div className="flex flex-col px-3 py-2 mx-auto font-orbitron">
               <NavLink
                 to={`/field/${field.slug}`}
                 className=" block mx-auto bg-btn-dark hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg"
@@ -51,7 +51,7 @@ export const Field = () => {
         ))}
       </div>
       <div className="flex justify-center mt-4">
-        <NavLink to="/fields" className="group relative w-auto cursor-pointer overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 text-center font-medium text-gray-900 shadow-sm transition-all duration-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:hover:border-gray-700">
+        <NavLink to="/fields" className="group font-lexend relative w-auto cursor-pointer overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 text-center font-medium text-gray-900 shadow-sm transition-all duration-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:hover:border-gray-700">
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-gray-900 transition-all duration-300 group-hover:scale-[100.8] dark:bg-btn-dark" />
             <span className="inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
