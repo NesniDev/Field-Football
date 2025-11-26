@@ -4,15 +4,15 @@ import { useParams } from 'react-router-dom'
 import { Calendar } from '@/components/ui/calendar'
 
 export const DetailsField = () => {
+  const [date, setDate] = useState(
+    new Date(2025, 5, 12)
+  )
   const { slug } = useParams()
     const [activeTab, setActiveTab] = useState('description')
   const info = fields.find(item => item.slug === slug)
 
   if(!info) return <p>Info no encontrada</p>
   
-  const [date, setDate] = useState(
-    new Date(2025, 5, 12)
-  )
   return (
     <>
       <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
@@ -49,6 +49,7 @@ export const DetailsField = () => {
             </div>
             <div>
               <Calendar
+                required
                 mode="single"
                 selected={date}
                 onSelect={setDate}
