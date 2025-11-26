@@ -1,12 +1,12 @@
 import { fields } from '@/lib/fields'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Calendar } from '@/components/ui/calendar'
+// import { Calendar } from '@/components/ui/calendar'
 
 export const DetailsField = () => {
-  const [date, setDate] = useState(
-    new Date(2025, 5, 12)
-  )
+  // const [date, setDate] = useState(
+  //   new Date(2025, 5, 12)
+  // )
   const { slug } = useParams()
     const [activeTab, setActiveTab] = useState('description')
   const info = fields.find(item => item.slug === slug)
@@ -48,14 +48,14 @@ export const DetailsField = () => {
                 <span className='text-sm text-gray-500'>Precio por hora: ${info.price} COP</span>
             </div>
             <div>
-              <Calendar
+              {/* <Calendar
                 required
                 mode="single"
                 selected={date}
                 onSelect={setDate}
                 className="rounded-lg border [--cell-size:--spacing(9)] md:[--cell-size:--spacing(10)] my-5"
                 buttonVariant="ghost"
-              />
+              /> */}
             </div>
             <h2>Horario Disponible</h2>
             <div className='flex flex-wrap justify-between items-center gap-2'>
@@ -72,7 +72,7 @@ export const DetailsField = () => {
             <div>
               <div className='flex justify-between items-center'>
                 <span className='font-bold text-xs'>Selección:</span>
-                <span className='text-gray-600'>{date.toLocaleDateString()}</span>
+                {/* <span className='text-gray-600'>{date.toLocaleDateString()}</span> */}
               </div>
               <div className='flex justify-between items-center gap-5'>
                 <span className='font-bold text-lg'>Total:</span>
