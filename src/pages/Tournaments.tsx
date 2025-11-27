@@ -2,8 +2,11 @@ import { tournament } from '@/lib/tournament'
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { GiTrophy } from "react-icons/gi";
+import { useState } from 'react';
 
 export const Tournaments = () => {
+  const [register, setRegister] = useState('')
+  
   return (
     <section className="max-w-3xl mx-auto mt-5">
       <h1 className="my-5 text-3xl font-bold">Explora Nuestros Torneos</h1>
@@ -65,8 +68,8 @@ export const Tournaments = () => {
               
             </div>
             <div className="flex flex-col px-3 py-2 mx-auto">
-              <button className="block mx-auto cursor-pointer bg-btn-dark hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg">
-                Inscribirse
+              <button onClick={() => setRegister(tournament.title)} disabled={register === tournament.title || tournament.availability === 'Finalizado'} className={` ${register === tournament.title || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark hover:bg-btn-dark/90'} block mx-auto  transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg`}>
+                {tournament.availability === 'Finalizado'  ? 'Finalizado' : register === tournament.title ? 'Inscrito' : 'Inscribirse'}
               </button>
             </div>
           </div>
