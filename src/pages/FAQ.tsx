@@ -17,10 +17,10 @@ export const FAQ = () => {
         {faqs.map((faq) => (
           <div
             key={faq.title}
-            className="rounded-lg bg-slate-900/70 p-4"
+            className="border-b-2 border-slate-900/20 p-4"
           >
             <button
-              className="w-full cursor-pointer list-none font-bold text-white"
+              className="w-full cursor-pointer list-none font-bold "
               onClick={() => toggle(faq.title)}
             >
               <div className="flex items-center justify-between">
@@ -32,7 +32,7 @@ export const FAQ = () => {
             </button>
 
             {open === faq.title && (
-              <p className="mt-2 text-white/60">{faq.description}</p>
+              <p className="mt-2 text-black/70 text-sm">{faq.description}</p>
             )}
           </div>
         ))}
