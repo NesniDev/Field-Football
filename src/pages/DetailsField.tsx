@@ -82,10 +82,13 @@ export const DetailsField = () => {
               </div>
               <div className='flex justify-between items-center gap-5 font-orbitron'>
                 <span className='font-bold text-lg'>Total:</span>
-                <span className='text-green-400 text-lg font-bold'>${info.price}</span>
+                <span className='text-green-400 text-lg font-bold'>${time === 'Seleccione una hora' ? 0 : info.price}</span>
               </div>
             </div>
-            <button className='w-full bg-green-600 text-white py-2 rounded-lg mt-5 font-orbitron cursor-pointer' onClick={() => setReserve(true)}>Reservar</button>
+            <div className={`${time === 'Seleccione una hora' && reserve ? 'flex justify-center items-center' : 'hidden'}`}>
+              <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' && reserve ? 'Seleccione una hora' : ``}</span>
+            </div>
+            <button className='w-full bg-green-600 text-white py-2 rounded-lg font-orbitron cursor-pointer' onClick={() => setReserve(true)}>Reservar</button>
         </aside>
       </main>
     </>
