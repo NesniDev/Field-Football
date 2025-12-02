@@ -1,17 +1,25 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 interface HeaderProps {
     color?: string
 }
 
 export const Header = ({color}: HeaderProps) => {
+  const {pathname} = useLocation()
   return (
-    <header className={`px-4 max-w-5xl mx-auto`}>
-      <nav className="flex justify-between items-center container mx-auto font-orbitron">
+    <header className={`max-w-5xl mx-auto`}>
+      <nav className="flex justify-between items-center font-orbitron">
         <NavLink to="/">
           <img src="/balon.webp" alt="Logo" className='size-18'/>
         </NavLink>
         <ul className={`flex gap-4 font-semibold ${color === 'white' ? 'text-gray-100' : 'text-gray-800'}`}>
+          {pathname !== '/' && (
+            <li>
+              <NavLink to="/" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
+                Inicio
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink to="/fields" className={`transition ${color === 'change' ? 'hover:text-gray-700/80' : 'text-white hover:text-gray-300/80'}`}>
               Canchas
