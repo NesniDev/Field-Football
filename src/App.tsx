@@ -11,8 +11,10 @@ import { DetailsField } from '@/pages/DetailsField'
 import { Header } from '@/components/common/Header'
 import { Hero } from '@/components/Home/Hero'
 import { FAQ } from '@/pages/FAQ'
+import { ScrollToTop } from './utils/Scroll'
 
 const AppRoutes = () => {
+ 
   const routes = useRoutes([
     {
       path: '/',
@@ -56,6 +58,7 @@ function App() {
   const {pathname} = useLocation();
   return (
     <>
+      <ScrollToTop />
       <section className='min-h-screen flex flex-col justify-center'>
         <div>
           {pathname === '/' ? <Hero /> : <Header color="change"/>}
