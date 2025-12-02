@@ -51,9 +51,17 @@ function App() {
   const {pathname} = useLocation();
   return (
     <>
-      {pathname === '/' ? <Hero /> : <Header color="change"/>}
-      <AppRoutes />
-      <Footer />
+      <section className='min-h-screen flex flex-col justify-center'>
+        <div>
+          {pathname === '/' ? <Hero /> : <Header color="change"/>}
+        </div>
+        <div className='flex-1'>
+          <AppRoutes />
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </section>
     </>
   )
 }
