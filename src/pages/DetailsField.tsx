@@ -6,7 +6,7 @@ import { horarios } from '@/lib/horarios'
 
 export const DetailsField = () => {
   const [date, setDate] = useState(
-    new Date(2025, 5, 12)
+    new Date()
   )
   const [time, setTime] = useState('Seleccione una hora')
   const [reserve, setReserve] = useState(false)
@@ -15,7 +15,7 @@ export const DetailsField = () => {
   const info = fields.find(item => item.slug === slug)
 
   if(!info) return <p>Info no encontrada</p>
-  
+
   return (
     <>
       <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
@@ -56,15 +56,18 @@ export const DetailsField = () => {
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-lg border [--cell-size:--spacing(9)] md:[--cell-size:--spacing(10)] my-5"
+                className={`rounded-lg border [--cell-size:--spacing(9)] md:[--cell-size:--spacing(10)] my-5`}
                 buttonVariant="ghost"
               />
             </div>
             <h2 className='font-orbitron text-xl  capitalize'>Horario Disponible</h2>
+            {/* {
+              date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0)  ? 'Es muy antigua la fecha' : date.toLocaleDateString()
+            } */}
             <div className='flex flex-wrap justify-between items-center gap-2'>
               {
-                horarios.map(tiempo => (
-                  <button onClick={() => setTime(tiempo)} className={`px-4 py-2 rounded-lg transition ${time === tiempo
+                horarios.map((tiempo, index) => (
+                  <button key={index} onClick={() => setTime(tiempo)} className={`px-4 py-2 rounded-lg transition ${time === tiempo
                   ? `bg-white text-gray-950 border-gray-600`
                   : `${reserve ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-gray-950 text-white border-transparent'}`}
                 } text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border`}>{tiempo}</button>
