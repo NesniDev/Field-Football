@@ -4,7 +4,7 @@ import { NavLink} from "react-router-dom"
 export const Fields = () => {
     return (
         <>
-            <div className="container mx-auto">
+            <div className="max-w-5xl container mx-auto">
                 <form className="flex flex-col justify-center items-center gap-2 max-w-md mx-auto mt-8">
                     <div className="flex gap-1">
                         <input type="text" className="w-full h-full rounded-lg px-3 py-2 bg-gray-400/50 text-black placeholder:text-gray-500" placeholder="Buscar cancha" />
@@ -24,7 +24,7 @@ export const Fields = () => {
                         fields.map((field, index) => (
 
                             <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
-                                <img src={field.image} alt={field.title} className="w-64 h-72 object-cover group-hover:scale-110 transition duration-800"/>
+                                <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
                                 <div>
                                 <div className="absolute bottom-4 left-4 ">
