@@ -10,6 +10,7 @@ import { Footer } from '@/components/common/Footer'
 import { DetailsField } from '@/pages/DetailsField'
 import { Header } from '@/components/common/Header'
 import { Hero } from '@/components/Home/Hero'
+import { FAQ } from '@/pages/FAQ'
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -28,6 +29,10 @@ const AppRoutes = () => {
     {
       path: '/tournaments',
       element: <Tournaments />
+    },
+    {
+      path: '/faq',
+      element: <FAQ />
     },
     {
       path: '/contact',

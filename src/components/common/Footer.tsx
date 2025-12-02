@@ -7,7 +7,7 @@ export const Footer = () => {
                     <ul className="flex gap-4">
                         <li><a href="/" className="hover:text-gray-500/70 transition">Soporte</a></li>
                         <li><a href="/" className="hover:text-gray-500/70 transition">Política de Privacidad</a></li>
-                        <li><a href="/" className="hover:text-gray-500/70 transition">Preguntas Frecuentes</a></li>
+                        <li><a href="/faq" className="hover:text-gray-500/70 transition">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
             </div>
