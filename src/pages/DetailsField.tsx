@@ -1,10 +1,12 @@
 import { fields } from '@/lib/fields'
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Calendar } from '@/components/ui/calendar'
 import { horarios } from '@/lib/horarios'
+import { NameContext } from '../context/InfoContext.tsx'
 
 export const DetailsField = () => {
+  const navigate = useNavigate()
   const [date, setDate] = useState(
     new Date()
   )
@@ -14,11 +16,24 @@ export const DetailsField = () => {
     const [activeTab, setActiveTab] = useState('description')
   const info = fields.find(item => item.slug === slug)
 
+  const context = useContext(NameContext)
+
+  if(!context) return <p>setDato no encontrado</p>
+  const { setName } = context
+
   if(!info) return <p>Info no encontrada</p>
+
+  const handlerReserve = () => {
+    setReserve(true)
+    setName(info.title)
+    if(time === 'Seleccione una hora') return
+    navigate('/receipt')
+  }
 
   return (
     <>
       <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
+        
         <section className='flex flex-col gap-2 w-full'>
           <img src={info.image} alt={info.title} className='h-[430px] w-full object-cover rounded-xl' />
           <div className='flex flex-col gap-1 my-5 font-orbitron'>
@@ -61,9 +76,9 @@ export const DetailsField = () => {
               />
             </div>
             <h2 className='font-orbitron text-xl  capitalize'>Horario Disponible</h2>
-            {/* {
+            {
               date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0)  ? 'Es muy antigua la fecha' : date.toLocaleDateString()
-            } */}
+            }
             <div className='flex flex-wrap justify-between items-center gap-2'>
               {
                 horarios.map((tiempo, index) => (
@@ -91,7 +106,7 @@ export const DetailsField = () => {
             <div className={`${time === 'Seleccione una hora' && reserve ? 'flex justify-center items-center' : 'hidden'}`}>
               <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' && reserve ? 'Seleccione una hora' : ``}</span>
             </div>
-            <button className='w-full bg-green-600 text-white py-2 rounded-lg font-orbitron cursor-pointer' onClick={() => setReserve(true)}>Reservar</button>
+            <button className='w-full bg-green-600 text-white py-2 rounded-lg font-orbitron cursor-pointer' onClick={() => handlerReserve()}>Reservar</button>
         </aside>
       </main>
     </>
