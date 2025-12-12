@@ -1,27 +1,44 @@
 import { fields } from "@/lib/fields"
+import { useState } from "react"
 import { NavLink} from "react-router-dom"
+import { TbSoccerField  } from "react-icons/tb";
+
+interface FieldItem {
+    image: string;
+    title: string;
+    slug: string;
+    address: string;
+    description: string;
+    characteristics: {
+        grassType: string;
+        dimensions: string;
+        lighting: string;
+        availability: string;
+    };
+    services: string[];
+    punctuation: string;
+    price: string;
+    ubication: string;
+}
 
 export const Fields = () => {
+    const [query, setQuery] = useState<string>('')
+    
+    const results:FieldItem[] = fields.filter((item: FieldItem) =>
+    item.title.toLowerCase().includes(query.toLowerCase())
+    );
+    
+    
     return (
         <>
             <div className="max-w-5xl container mx-auto">
-                <form className="flex flex-col justify-center items-center gap-2 max-w-md mx-auto mt-8">
-                    <div className="flex gap-1">
-                        <input type="text" className="w-full h-full rounded-lg px-3 py-2 bg-gray-400/50 text-black placeholder:text-gray-500" placeholder="Buscar cancha" />
-                        <button type="submit" className="whitespace-nowrap cursor-pointer hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark text-gray-800 bg-btn-dark px-3 py-1.5 rounded-lg flex-1">Buscar</button>
-                    </div>
-                    <div className="flex flex-col justify-center items-center gap-1 mt-4">
-                        <label htmlFor="" className="text-sm font-semibold">Filtrar por:</label>
-                        <select name="" id="" className="w-full h-full rounded-lg px-3 py-1.5 bg-gray-300/50 text-black">
-                            <option value="todos">Todos</option>
-                            <option value="disponibles">Disponibles</option>
-                            <option value="reservadas">Reservadas</option>
-                        </select>
-                    </div>
+                <form className="flex justify-center items-center max-w-lg mx-auto gap-3 mt-8 bg-gray-400/50  rounded-lg px-4 py-2 group">
+                        <TbSoccerField  className="h-11 w-11 font-normal text-green-900 transition-all duration-300 group-focus-within:rotate-45 group-focus-within:text-green-700"/>
+                        <input value={query} onChange={(e) => setQuery(e.target.value)} type="text" className="w-full h-12 font-orbitron outline-none placeholder:text-gray-500 group-focus:bg-red-600" placeholder="Nombre de la cancha" />
                 </form>
                 <section className="flex flex-wrap items-center justify-center gap-4 my-8 font-orbitron">
                     {
-                        fields.map((field, index) => (
+                        results.length > 0 ? results.map((field, index) => (
 
                             <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
                                 <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>
@@ -33,7 +50,9 @@ export const Fields = () => {
                                 </div>
                                 </div>
                             </NavLink>
-                        ))
+                        )) : (
+                            <p className="text-center text-gray-600 font-semibold text-lg mt-8 ">No se encontraron resultados</p>
+                        )
                     }
                 </section>
             </div>
