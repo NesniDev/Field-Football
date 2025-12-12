@@ -11,7 +11,9 @@ import { DetailsField } from '@/pages/DetailsField'
 import { Header } from '@/components/common/Header'
 import { Hero } from '@/components/Home/Hero'
 import { FAQ } from '@/pages/FAQ'
-import { ScrollToTop } from './utils/Scroll'
+import { ScrollToTop } from './utils/Scroll.ts'
+import { Payment } from './pages/Payment'
+import { Receipt } from '@/pages/Receipt.tsx'
 
 const AppRoutes = () => {
  
@@ -33,6 +35,14 @@ const AppRoutes = () => {
       element: <Tournaments />
     },
     {
+      path: '/payment',
+      element: <Payment />
+    },
+    {
+      path: '/receipt',
+      element: <Receipt />
+    },
+    {
       path: '/faq',
       element: <FAQ />
     },
@@ -48,6 +58,7 @@ const AppRoutes = () => {
       path: '/field/:slug',
       element: <DetailsField />
     }
+    
 
   ])
   return routes
