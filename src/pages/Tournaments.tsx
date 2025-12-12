@@ -8,9 +8,9 @@ export const Tournaments = () => {
   const [register, setRegister] = useState('')
   
   return (
-    <section className="max-w-3xl mx-auto mt-5">
+    <section className="max-w-5xl mx-auto mt-5">
       <h1 className="my-5 text-3xl font-bold">Explora Nuestros Torneos</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center mb-10 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center mb-10 gap-5">
         {tournament.map((tournament, index) => (
           <div
             key={index}
