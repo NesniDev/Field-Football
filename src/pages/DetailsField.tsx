@@ -19,13 +19,18 @@ export const DetailsField = () => {
   const context = useContext(NameContext)
 
   if(!context) return <p>setDato no encontrado</p>
-  const { setName } = context
+  const { setName, setAddress, setDateSelection, setHour, setPrice } = context
 
   if(!info) return <p>Info no encontrada</p>
 
   const handlerReserve = () => {
     setReserve(true)
     setName(info.title)
+    setAddress(info.address)
+    setDateSelection(date)
+    setHour(time)
+    setPrice(info.price)
+
     if(time === 'Seleccione una hora') return
     navigate('/receipt')
   }
@@ -76,22 +81,25 @@ export const DetailsField = () => {
               />
             </div>
             <h2 className='font-orbitron text-xl  capitalize'>Horario Disponible</h2>
-            {
-              date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0)  ? 'Es muy antigua la fecha' : date.toLocaleDateString()
-            }
+            
             <div className='flex flex-wrap justify-between items-center gap-2'>
               {
+                date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0) ?
                 horarios.map((tiempo, index) => (
                   <button key={index} onClick={() => setTime(tiempo)} className={`px-4 py-2 rounded-lg transition ${time === tiempo
                   ? `bg-white text-gray-950 border-gray-600`
-                  : `${reserve ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-gray-950 text-white border-transparent'}`}
+                  : `bg-gray-950 text-white border-transparent`}
                 } text-xs cursor-pointer active:bg-transparent active:text-gray-950 active:border-gray-600 border`}>{tiempo}</button>
+                
                 ))
+                : <p className='text-red-500 text-xs font-bold'>La fecha seleccionada no es válida </p>
               }
             </div>
-            <div>
+            {
+               date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0) && <div>
               <button className='block bg-amber-500 text-white border-transparent py-1.5 px-3 text-xs rounded-lg mx-auto cursor-pointer' onClick={() => {setTime('Seleccione una hora'); setReserve(false)}}>Reiniciar</button>
             </div>
+            }
             <hr className='my-4'/>
             <div>
               <div className='flex justify-between items-center'>
@@ -106,7 +114,8 @@ export const DetailsField = () => {
             <div className={`${time === 'Seleccione una hora' && reserve ? 'flex justify-center items-center' : 'hidden'}`}>
               <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' && reserve ? 'Seleccione una hora' : ``}</span>
             </div>
-            <button className='w-full bg-green-600 text-white py-2 rounded-lg font-orbitron cursor-pointer' onClick={() => handlerReserve()}>Reservar</button>
+            
+            <button className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`} onClick={() => handlerReserve()}>Reservar</button>
         </aside>
       </main>
     </>
