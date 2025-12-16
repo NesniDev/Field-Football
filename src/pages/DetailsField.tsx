@@ -17,7 +17,7 @@ export const DetailsField = () => {
   const context = useContext(NameContext)
 
   if(!context) return <p>setDato no encontrado</p>
-  const { setName, setAddress, setDateSelection, setHour, setPrice } = context
+  const { setName, setAddress, setDateSelection, setHour, setPrice, setImage } = context
 
   if(!info) return <p>Info no encontrada</p>
 
@@ -28,6 +28,7 @@ export const DetailsField = () => {
     setDateSelection(date)
     setHour(time)
     setPrice(info.price)
+    setImage(info.image)
 
     if(time === 'Seleccione una hora') return
     navigate('/receipt')

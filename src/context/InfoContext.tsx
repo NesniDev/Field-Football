@@ -6,11 +6,13 @@ interface NameContextType {
   hour: string;
   address: string;
   price: string;
+  image: string;
   setName: (value: string) => void;
   setDateSelection: (value: Date) => void;
   setHour: (value: string) => void;
   setAddress: (value: string) => void;
   setPrice: (value: string) => void;
+  setImage: (value: string) => void;
 }
 
 export const NameContext = createContext<NameContextType | null>(null);
@@ -21,9 +23,10 @@ export function NameProvider({ children }: { children: ReactNode }) {
   const [hour, setHour] = useState("")
   const [address, setAddress] = useState("")
   const [price, setPrice] = useState('')
+  const [image, setImage] = useState('')
 
   return (
-    <NameContext value={{ name, setName, dateSelection, setDateSelection, hour, setHour, address, setAddress, price, setPrice }}>
+    <NameContext value={{ name, setName, dateSelection, setDateSelection, hour, setHour, address, setAddress, price, setPrice, image, setImage }}>
       {children}
     </NameContext>
   );
