@@ -25,12 +25,12 @@ export const Receipt = () => {
                 <span className=" flex flex-col font-normal text-gray-400/90">Código de Reserva: <span className="font-bold text-black">#123456</span></span>
                 <hr />
                 <div className="flex flex-col gap-1">
-                    <span className="flex items-center gap-2"><GiSoccerBall className="text-btn-dark text-xl"/> <span>Cancha Sintética {name}</span></span>
-                    <span className="flex items-center gap-2"><FaRegCalendarAlt className="text-btn-dark text-xl"/> <span>{dateSelection.toLocaleDateString().split('/')[0]} de {months[dateSelection.getMonth()]} de {dateSelection.toLocaleDateString().split('/')[2]}</span></span>
-                    <span className="flex items-center gap-2"><FaLocationDot className="text-btn-dark text-xl"/> <span>{address}</span></span>
-                    <span className="flex items-center gap-2"><MdAccessTimeFilled className="text-btn-dark text-xl"/> <span>{Number(hour.split(':')[0]) > 12 ? `${Number(hour.split(':')[0]) - 12}:00 pm` : `${hour} am`}</span></span>
+                    <span className="flex items-center gap-2"><GiSoccerBall className="text-btn-dark text-xl"/> <span>Cancha Sintética {name }</span></span>
+                    <span className="flex items-center gap-2"><FaRegCalendarAlt className="text-btn-dark text-xl"/> {dateSelection ? <span>{dateSelection.toLocaleDateString().split('/')[0]} de {months[dateSelection.getMonth()]} de {dateSelection.toLocaleDateString().split('/')[2]}</span> : <span>Seleccione una fecha</span>}</span>
+                    <span className="flex items-center gap-2"><FaLocationDot className="text-btn-dark text-xl"/> <span>{address || 'Seleccione una fecha'}</span></span>
+                    <span className="flex items-center gap-2"><MdAccessTimeFilled className="text-btn-dark text-xl"/> <span>{hour || 'Seleccione una hora'}</span></span>
                     <span className="flex items-center gap-2"><GiTimeBomb className="text-btn-dark text-xl"/> <span>Tiempo de 1 hora</span></span>
-                    <span className="flex items-center gap-2"><TbCoinFilled className="text-btn-dark text-xl"/> <span>$ {price}</span></span>
+                    <span className="flex items-center gap-2"><TbCoinFilled className="text-btn-dark text-xl"/> <span>{price ? `$${price}` : 'Precio no encontrado'}</span></span>
                 </div>
             </div>
             <span className="text-sm font-light flex flex-col items-center justify-center my-7 mx-auto bg-green-100 p-4 rounded-lg text-btn-dark">Recibirás un recordatorio automáticos una hora antes de tu reserva. <span>Prepárate para jugar!</span></span>

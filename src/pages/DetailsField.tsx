@@ -7,9 +7,7 @@ import { NameContext } from '../context/InfoContext.tsx'
 
 export const DetailsField = () => {
   const navigate = useNavigate()
-  const [date, setDate] = useState(
-    new Date()
-  )
+  const [date, setDate] = useState(new Date)
   const [time, setTime] = useState('Seleccione una hora')
   const [reserve, setReserve] = useState(false)
   const { slug } = useParams()
@@ -94,9 +92,10 @@ export const DetailsField = () => {
                 ))
                 : <p className='text-red-500 text-xs font-bold'>La fecha seleccionada no es válida </p>
               }
+              
             </div>
             {
-               date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0) && <div>
+               time === 'Seleccione una hora' || date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0)  && <div>
               <button className='block bg-amber-500 text-white border-transparent py-1.5 px-3 text-xs rounded-lg mx-auto cursor-pointer' onClick={() => {setTime('Seleccione una hora'); setReserve(false)}}>Reiniciar</button>
             </div>
             }
