@@ -6,10 +6,10 @@ import { NameContext } from "@/context/InfoContext";
 import { fields } from "@/lib/fields";
 
 export const Reservations = () => {
+    const context = useContext(NameContext)
 
     const info = fields.find(item => item.slug)
     if(!info) return
-    const context = useContext(NameContext)
 
     if(!context) return <p>setDato no encontrado</p>
 
@@ -56,7 +56,7 @@ export const Reservations = () => {
                             </section>
 
                             <footer className="flex justify-center">
-                                <button className="bg-btn-dark px-3 py-2 rounded-lg font-semibold mt-10 cursor-pointer hover:bg-btn-dark/80 transition delay-75" onClick={() => handleReserve()}>Volver a Reservar</button>
+                                <button className="bg-btn-dark px-3 py-2 rounded-lg font-semibold mt-10 cursor-pointer hover:bg-btn-dark/80 transition delay-75" >Volver a Reservar</button>
                             </footer>
                         </section>
                     </article>
