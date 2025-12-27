@@ -5,16 +5,20 @@ import { MdAccessTimeFilled } from "react-icons/md";
 import { TbCoinFilled } from "react-icons/tb";
 
 
-import { useContext } from "react"
-import { NameContext } from "../context/InfoContext"
+import { useReservationStore } from "../store/useReservationStore.tsx"
 import { NavLink } from "react-router-dom";
 
 export const Receipt = () => {
-    const context = useContext(NameContext)
-    if(!context) return <p>Nombre no encontrado</p>
-    const {name, address, hour, dateSelection, price} = context
+
+    const {selectedField, reservationDate, startTime, price} = useReservationStore()
 
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+
+    const fieldName = selectedField ? selectedField.title : 'Ninguna cancha seleccionada'
+    const fieldAddress = selectedField ? selectedField.address : 'Dirección no disponible';
+    const formattedDate = reservationDate ? `${reservationDate.getDate()} de ${months[reservationDate.getMonth()]} de ${reservationDate.getFullYear()}` : 'Fecha no seleccionada';
+
+
 
     return (
         <section className="grid place-items-center max-w-3xl my-3 mx-auto bg-white px-8 py-3 rounded-lg">
@@ -25,10 +29,10 @@ export const Receipt = () => {
                 <span className=" flex flex-col font-normal text-gray-400/90">Código de Reserva: <span className="font-bold text-black">#123456</span></span>
                 <hr />
                 <div className="flex flex-col gap-1">
-                    <span className="flex items-center gap-2"><GiSoccerBall className="text-btn-dark text-xl"/> <span>Cancha Sintética {name }</span></span>
-                    <span className="flex items-center gap-2"><FaRegCalendarAlt className="text-btn-dark text-xl"/> {dateSelection ? <span>{dateSelection.toLocaleDateString().split('/')[0]} de {months[dateSelection.getMonth()]} de {dateSelection.toLocaleDateString().split('/')[2]}</span> : <span>Seleccione una fecha</span>}</span>
-                    <span className="flex items-center gap-2"><FaLocationDot className="text-btn-dark text-xl"/> <span>{address || 'Seleccione una fecha'}</span></span>
-                    <span className="flex items-center gap-2"><MdAccessTimeFilled className="text-btn-dark text-xl"/> <span>{hour || 'Seleccione una hora'}</span></span>
+                    <span className="flex items-center gap-2"><GiSoccerBall className="text-btn-dark text-xl"/> <span>Cancha Sintética { fieldName }</span></span>
+                    <span className="flex items-center gap-2"><FaRegCalendarAlt className="text-btn-dark text-xl"/> {formattedDate}</span>
+                    <span className="flex items-center gap-2"><FaLocationDot className="text-btn-dark text-xl"/> <span>{fieldAddress}</span></span>
+                    <span className="flex items-center gap-2"><MdAccessTimeFilled className="text-btn-dark text-xl"/> <span>{startTime || 'Seleccione una hora'}</span></span>
                     <span className="flex items-center gap-2"><GiTimeBomb className="text-btn-dark text-xl"/> <span>Tiempo de 1 hora</span></span>
                     <span className="flex items-center gap-2"><TbCoinFilled className="text-btn-dark text-xl"/> <span>{price ? `$${price}` : 'Precio no encontrado'}</span></span>
                 </div>

@@ -1,11 +1,15 @@
 import { fields } from '@/lib/fields'
-import { useContext, useState } from 'react'
+import {  useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Calendar } from '@/components/ui/calendar'
 import { horarios } from '@/lib/horarios'
-import { NameContext } from '../context/InfoContext.tsx'
+import { useReservationStore } from '../store/useReservationStore.tsx'
+import type { InfoField } from '@/models/types.js'
 
 export const DetailsField = () => {
+
+  const { setSelectedField, setStartTime, setReservationDate, setPrice } = useReservationStore()
+
   const navigate = useNavigate()
   const [date, setDate] = useState(new Date)
   const [time, setTime] = useState('Seleccione una hora')
@@ -14,24 +18,28 @@ export const DetailsField = () => {
     const [activeTab, setActiveTab] = useState('description')
   const info = fields.find(item => item.slug === slug)
 
-  const context = useContext(NameContext)
-
-  if(!context) return <p>setDato no encontrado</p>
-  const { setName, setAddress, setDateSelection, setHour, setPrice, setImage } = context
-
   if(!info) return <p>Info no encontrada</p>
 
-  const handlerReserve = () => {
-    setReserve(true)
-    setName(info.title)
-    setAddress(info.address)
-    setDateSelection(date)
-    setHour(time)
-    setPrice(info.price)
-    setImage(info.image)
+  // const setSelectedField = () => {
+  //   setReserve(true)
+  //   setName(info.title)
+  //   setAddress(info.address)
+  //   setDateSelection(date)
+  //   setHour(time)
+  //   setPrice(info.price)
+  //   setImage(info.image)
 
-    if(time === 'Seleccione una hora') return
+  //   if(time === 'Seleccione una hora') return
+  //   navigate('/receipt')
+  // }
+
+  const handleReserve = (field: InfoField) => {
+    setSelectedField(field)
     navigate('/receipt')
+    setReserve(true)
+    setStartTime(time)
+    setReservationDate(date)
+    setPrice(field.price)
   }
 
   return (
@@ -64,7 +72,7 @@ export const DetailsField = () => {
             {activeTab === 'ubication' && <iframe src={info.ubication} width="500" height="250" loading="lazy" className='w-full rounded-2xl'></iframe>}
           </div>
         </section>
-        <aside className='flex flex-col gap-2 bg-white p-8 rounded-lg h-full'>
+        <aside className='flex flex-col gap-2 bg-white p-8 rounded-lg h-full flex-1'>
             <div className='flex flex-col gap-1 font-orbitron'>
                 <span className='whitespace-nowrap text-xl font-bold capitalize'>Seleccionar fecha y hora</span>
                 <span className='text-sm text-gray-500'>Precio por hora: ${info.price} COP</span>
@@ -115,7 +123,7 @@ export const DetailsField = () => {
               <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' && reserve ? 'Seleccione una hora' : ``}</span>
             </div>
             
-            <button className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`} onClick={() => handlerReserve()}>Reservar</button>
+            <button className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`} onClick={() => handleReserve(info)}>Reservar</button>
         </aside>
       </main>
     </>

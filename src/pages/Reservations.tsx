@@ -1,19 +1,23 @@
 import { MdOutlineDateRange } from "react-icons/md";
 import { TbClockHour3 } from "react-icons/tb";
 import { RiMoneyDollarCircleLine, RiFootballLine } from "react-icons/ri";
-import { useContext } from "react";
-import { NameContext } from "@/context/InfoContext";
+
 import { fields } from "@/lib/fields";
+import { useReservationStore } from "../store/useReservationStore";
 
 export const Reservations = () => {
-    const context = useContext(NameContext)
+    const {selectedField, reservationDate, startTime, price} = useReservationStore()
 
     const info = fields.find(item => item.slug)
     if(!info) return
 
-    if(!context) return <p>setDato no encontrado</p>
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
-    const { name, hour, dateSelection, price, image } = context
+
+    const fieldName = selectedField ? selectedField.title : "No se selecciono una cancha"
+    const fieldImage = selectedField ? selectedField.image : 'No se selecciono una cancha' 
+    // const fieldAddress = selectedField ? selectedField.address : ""
+    const formattedDate = reservationDate ? `${reservationDate.getDate()} de ${months[reservationDate.getMonth()]} de ${reservationDate.getFullYear()}` : 'Fecha no seleccionada';
 
     
     return (
@@ -24,12 +28,12 @@ export const Reservations = () => {
                 <section className="my-5">
                     <article className="flex gap-5 p-5 bg-white rounded-lg">
                         <figure>
-                            <img src={`${image}`} alt="Imagen de cancha" className="w-96 h-auto rounded-lg"/>
+                            <img src={`${fieldImage}`} alt="Imagen de cancha" className="w-96 h-auto rounded-lg"/>
                         </figure>
 
                         <section className="w-full">
                             <header className="flex justify-between items-center ">
-                                <h2 className="text-xl font-semibold">Cancha {name}</h2>
+                                <h2 className="text-xl font-semibold">Cancha {fieldName}</h2>
                                 <span className="bg-green-200 px-3 py-1 rounded-4xl text-sm text-green-800 font-semibold flex gap-1 items-center"><span className="text-lg  text-green-500"><RiFootballLine/></span>Completada</span>
                             </header>
                             <hr className="border-gray-400/10 my-3"/>
@@ -39,13 +43,13 @@ export const Reservations = () => {
                                     <span className="text-2xl text-green-500">
                                         <MdOutlineDateRange/>
                                     </span>
-                                    <span className="flex flex-col font-semibold justify-start"><strong className="text-sm font-medium text-gray-500/50">Fecha</strong>{dateSelection.toLocaleDateString()}</span>
+                                    <span className="flex flex-col font-semibold justify-start"><strong className="text-sm font-medium text-gray-500/50">Fecha</strong>{formattedDate}</span>
                                 </div>
                                 <div className="flex gap-3 justify-start items-center">
                                     <span className="text-2xl text-green-500">
                                         <TbClockHour3/>
                                     </span>
-                                    <span className="flex flex-col font-semibold justify-start"><strong className="text-sm font-medium text-gray-500/50">Hora</strong> {hour}</span>
+                                    <span className="flex flex-col font-semibold justify-start"><strong className="text-sm font-medium text-gray-500/50">Hora</strong> {startTime}</span>
                                 </div>
                                 <div className="flex gap-3 justify-start items-center">
                                     <span className="text-2xl text-green-500">
