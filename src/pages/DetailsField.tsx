@@ -5,42 +5,53 @@ import { Calendar } from '@/components/ui/calendar'
 import { horarios } from '@/lib/horarios'
 import { useReservationStore } from '../store/useReservationStore.tsx'
 import type { InfoField } from '@/models/types.js'
+import { reservationSchema } from '@/schemas/reservations.ts'
 
 export const DetailsField = () => {
 
   const { setSelectedField, setStartTime, setReservationDate, setPrice } = useReservationStore()
 
   const navigate = useNavigate()
-  const [date, setDate] = useState(new Date)
-  const [time, setTime] = useState('Seleccione una hora')
-  const [reserve, setReserve] = useState(false)
+  
+  const [date, setDate] = useState<Date>(new Date())
+  const [time, setTime] = useState<string>('')
+  const [activeTab, setActiveTab] = useState<'description' | 'services' | 'ubication'>('description')
+
   const { slug } = useParams()
-    const [activeTab, setActiveTab] = useState('description')
+
   const info = fields.find(item => item.slug === slug)
 
   if(!info) return <p>Info no encontrada</p>
 
-  // const setSelectedField = () => {
-  //   setReserve(true)
-  //   setName(info.title)
-  //   setAddress(info.address)
-  //   setDateSelection(date)
-  //   setHour(time)
-  //   setPrice(info.price)
-  //   setImage(info.image)
+  const normalizeDate = (d: Date) => {
+    const date = new Date(d)
+    date.setHours(0, 0, 0, 0)
+    return date
+  }
 
-  //   if(time === 'Seleccione una hora') return
-  //   navigate('/receipt')
-  // }
+  const today = normalizeDate(new Date())
+  const selectedDate = normalizeDate(date)
+
+  const isFutureDate = selectedDate.getTime() >= today.getTime()
 
   const handleReserve = (field: InfoField) => {
-    setSelectedField(field)
-    navigate('/receipt')
-    setReserve(true)
-    setStartTime(time)
-    setReservationDate(date)
-    setPrice(field.price)
-  }
+  const validation = reservationSchema.safeParse({
+    selectedField: field,
+    date,
+    time
+  })
+
+  // const hoursIncluse = horarios.includes(time)
+
+  if (!validation.success) return
+
+  setSelectedField(field)
+  setStartTime(time!)
+  setReservationDate(date)
+  setPrice(field.price)
+
+  navigate('/receipt')
+}
 
   return (
     <>
@@ -91,7 +102,7 @@ export const DetailsField = () => {
             
             <div className='flex flex-wrap justify-between items-center gap-2'>
               {
-                date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0) ?
+                isFutureDate ?
                 horarios.map((tiempo, index) => (
                   <button key={index} onClick={() => setTime(tiempo)} className={`px-4 py-2 rounded-lg transition ${time === tiempo
                   ? `bg-white text-gray-950 border-gray-600`
@@ -104,8 +115,8 @@ export const DetailsField = () => {
               
             </div>
             {
-               time === 'Seleccione una hora' || date.setHours(0,0,0,0) > new Date().setHours(0,0,0,0)  && <div>
-              <button className='block bg-amber-500 text-white border-transparent py-1.5 px-3 text-xs rounded-lg mx-auto cursor-pointer' onClick={() => {setTime('Seleccione una hora'); setReserve(false)}}>Reiniciar</button>
+               time === 'Seleccione una hora' || isFutureDate  && <div>
+              <button className='block bg-amber-500 text-white border-transparent py-1.5 px-3 text-xs rounded-lg mx-auto cursor-pointer' onClick={() => {setTime('Seleccione una hora')}}>Reiniciar</button>
             </div>
             }
             <hr className='my-4'/>
@@ -119,8 +130,8 @@ export const DetailsField = () => {
                 <span className='text-green-400 text-lg font-bold'>${time === 'Seleccione una hora' ? 0 : info.price}</span>
               </div>
             </div>
-            <div className={`${time === 'Seleccione una hora' && reserve ? 'flex justify-center items-center' : 'hidden'}`}>
-              <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' && reserve ? 'Seleccione una hora' : ``}</span>
+            <div className={`${time === 'Seleccione una hora' ? 'flex justify-center items-center' : 'hidden'}`}>
+              <span className='inline-flex items-center rounded-md bg-red-400/40 px-2 py-1 font-medium text-xs text-red-400 inset-ring inset-ring-red-500/50'>{time === 'Seleccione una hora' ? 'Seleccione una hora' : ``}</span>
             </div>
             
             <button className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`} onClick={() => handleReserve(info)}>Reservar</button>
