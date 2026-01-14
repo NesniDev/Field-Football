@@ -1,24 +1,11 @@
 import { MdOutlineDateRange } from "react-icons/md";
 import { TbClockHour3 } from "react-icons/tb";
 import { RiMoneyDollarCircleLine, RiFootballLine } from "react-icons/ri";
-
-import { fields } from "@/lib/fields";
-import { useReservationStore } from "../store/useReservationStore";
+import { useReservations } from "../hooks/useReservations";
 
 export const Reservations = () => {
-    const {selectedField, reservationDate, startTime, price} = useReservationStore()
-
-    const info = fields.find(item => item.slug)
-    if(!info) return
-
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-
-
-    const fieldName = selectedField ? selectedField.title : "No se selecciono una cancha"
-    const fieldImage = selectedField ? selectedField.image : 'No se selecciono una cancha' 
-    // const fieldAddress = selectedField ? selectedField.address : ""
-    const formattedDate = reservationDate ? `${reservationDate.getDate()} de ${months[reservationDate.getMonth()]} de ${reservationDate.getFullYear()}` : 'Fecha no seleccionada';
-
+    
+    const {fieldImage,fieldName,formattedDate,price,startTime} = useReservations()
     
     return (
         <div className="min-h-screen">

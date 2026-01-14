@@ -1,57 +1,12 @@
-import { fields } from '@/lib/fields'
-import {  useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
 import { Calendar } from '@/components/ui/calendar'
 import { horarios } from '@/lib/horarios'
-import { useReservationStore } from '../store/useReservationStore.tsx'
-import type { InfoField } from '@/models/types.js'
-import { reservationSchema } from '@/schemas/reservations.ts'
+import { useDetailsField } from '@/hooks/useDetailsField.ts'
 
 export const DetailsField = () => {
 
-  const { setSelectedField, setStartTime, setReservationDate, setPrice } = useReservationStore()
+  const {info, activeTab, isFutureDate, time, date, setDate, setTime, setActiveTab, handleReserve} = useDetailsField()
 
-  const navigate = useNavigate()
-  
-  const [date, setDate] = useState<Date>(new Date())
-  const [time, setTime] = useState<string>('')
-  const [activeTab, setActiveTab] = useState<'description' | 'services' | 'ubication'>('description')
-
-  const { slug } = useParams()
-
-  const info = fields.find(item => item.slug === slug)
-
-  if(!info) return <p>Info no encontrada</p>
-
-  const normalizeDate = (d: Date) => {
-    const date = new Date(d)
-    date.setHours(0, 0, 0, 0)
-    return date
-  }
-
-  const today = normalizeDate(new Date())
-  const selectedDate = normalizeDate(date)
-
-  const isFutureDate = selectedDate.getTime() >= today.getTime()
-
-  const handleReserve = (field: InfoField) => {
-  const validation = reservationSchema.safeParse({
-    selectedField: field,
-    date,
-    time
-  })
-
-  // const hoursIncluse = horarios.includes(time)
-
-  if (!validation.success) return
-
-  setSelectedField(field)
-  setStartTime(time!)
-  setReservationDate(date)
-  setPrice(field.price)
-
-  navigate('/receipt')
-}
+  if(!info) return
 
   return (
     <>

@@ -1,50 +1,13 @@
-import { fields } from "@/lib/fields"
-import { useState } from "react"
-import { NavLink, useLocation, useNavigate} from "react-router-dom"
+
+import { NavLink} from "react-router-dom"
 import { TbSoccerField  } from "react-icons/tb";
 import { IoMdCloseCircle   } from "react-icons/io";
-
-interface FieldItem {
-    image: string;
-    title: string;
-    slug: string;
-    address: string;
-    description: string;
-    characteristics: {
-        grassType: string;
-        dimensions: string;
-        lighting: string;
-        availability: string;
-    };
-    services: string[];
-    punctuation: string;
-    price: string;
-    ubication: string;
-}
+import { useFields } from "@/hooks/useFields";
 
 export const Fields = () => {
-    const [query, setQuery] = useState<string>('')
-    const navigate = useNavigate()
-    const location = useLocation()
-    const params = new URLSearchParams(location.search)
+    
+    const {setQuery, clean,handleSubmit,results,query} = useFields()
 
-    const queryParams = params.get('q') || ""
-    
-    const results:FieldItem[] = fields.filter((item: FieldItem) =>
-    item.title.toLowerCase().includes(queryParams.toLowerCase())
-    );
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault()
-            if(!query.trim()) return // evita consulats vacias
-            navigate(`/fields?q=${query}`)
-        }
-    
-        const clean = () => {
-            setQuery('')
-            navigate('/fields')
-        }
-    
     return (
         <>
             <div className="max-w-5xl container mx-auto">

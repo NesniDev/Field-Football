@@ -3,22 +3,12 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaLocationDot, FaRegCircleCheck  } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { TbCoinFilled } from "react-icons/tb";
-
-
-import { useReservationStore } from "../store/useReservationStore.tsx"
 import { NavLink } from "react-router-dom";
+import { useReceipt } from "@/hooks/useReceipt.ts";
 
 export const Receipt = () => {
 
-    const {selectedField, reservationDate, startTime, price} = useReservationStore()
-
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-
-    const fieldName = selectedField ? selectedField.title : 'Ninguna cancha seleccionada'
-    const fieldAddress = selectedField ? selectedField.address : 'Dirección no disponible';
-    const formattedDate = reservationDate ? `${reservationDate.getDate()} de ${months[reservationDate.getMonth()]} de ${reservationDate.getFullYear()}` : 'Fecha no seleccionada';
-
-
+    const {fieldAddress,fieldName,formattedDate, startTime,price} = useReceipt()
 
     return (
         <section className="grid place-items-center max-w-3xl my-3 mx-auto bg-white px-8 py-3 rounded-lg">
