@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { type InfoField } from '../models/types'
+import type { InfoField } from '../models/types'
 
 interface ReservationStore {
   selectedField: InfoField | null;  // Puede ser una cancha (InfoField) o null
