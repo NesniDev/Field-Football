@@ -1,0 +1,171 @@
+[
+  {
+    "id": "1",
+    "availability": "Abierto",
+    "genre": "Femenino",
+    "image": "images/torneo-fem.avif",
+    "title": "Copa Verano 2025",
+    "location": {
+      "city": "Chiquinquirá",
+      "address": "Camelot"
+    },
+    "date": "15 Jul - 25 Jul",
+    "income": "300.000"
+  },
+  {
+    "id": "2",
+    "availability": "Últimos cupos",
+    "genre": "Masculino",
+    "image": "images/torneo-mas.avif",
+    "title": "Liga Empresarial",
+    "location": {
+      "city": "Chiquinquirá",
+      "address": "La Fiera"
+    },
+    "date": "10 Nov - 25 Nov",
+    "income": "300.000"
+  },
+  {
+    "id": "3",
+    "availability": "Finalizado",
+    "genre": "Mixto",
+    "image": "images/torneo-mas.avif",
+    "title": "Torneo Relámpago",
+    "location": {
+      "city": "Chiquinquirá",
+      "address": "El Barcelona"
+    },
+    "date": "10 Dic - 10 Dic",
+    "income": "350.000"
+  },
+  {
+    "id": "4",
+    "availability": "Abierto",
+    "genre": "Masculino",
+    "image": "images/torneo-mas.avif",
+    "title": "Copa Oro 2025",
+    "location": {
+      "city": "Tunja",
+      "address": "Estadio La Independencia"
+    },
+    "date": "5 Ene - 15 Ene",
+    "income": "400.000"
+  },
+  {
+    "id": "5",
+    "availability": "Próximamente",
+    "genre": "Femenino",
+    "image": "images/torneo-fem.avif",
+    "title": "Liga Femenina Elite",
+    "location": {
+      "city": "Duitama",
+      "address": "Estadio Bicentenario"
+    },
+    "date": "1 Feb - 28 Feb",
+    "income": "350.000"
+  },
+  {
+    "id": "6",
+    "availability": "Abierto",
+    "genre": "Mixto",
+    "image": "images/torneo-mas.avif",
+    "title": "Torneo de Invierno",
+    "location": {
+      "city": "Sogamoso",
+      "address": "Estadio Luis Antonio Duque"
+    },
+    "date": "15 Mar - 30 Mar",
+    "income": "320.000"
+  },
+  {
+    "id": "7",
+    "availability": "Últimos cupos",
+    "genre": "Masculino",
+    "image": "images/torneo-mas.avif",
+    "title": "Copa Libertadores Local",
+    "location": {
+      "city": "Paipa",
+      "address": "Estadio Municipal"
+    },
+    "date": "10 Abr - 25 Abr",
+    "income": "380.000"
+  },
+  {
+    "id": "8",
+    "availability": "Próximamente",
+    "genre": "Femenino",
+    "image": "images/torneo-fem.avif",
+    "title": "Torneo Primavera",
+    "location": {
+      "city": "Tibasosa",
+      "address": "Canchas Sintéticas"
+    },
+    "date": "1 May - 15 May",
+    "income": "300.000"
+  },
+  {
+    "id": "9",
+    "availability": "Abierto",
+    "genre": "Mixto",
+    "image": "images/torneo-mas.avif",
+    "title": "Copa Amistad",
+    "location": {
+      "city": "Nobsa",
+      "address": "Polideportivo Municipal"
+    },
+    "date": "5 Jun - 20 Jun",
+    "income": "280.000"
+  },
+  {
+    "id": "10",
+    "availability": "Finalizado",
+    "genre": "Masculino",
+    "image": "images/torneo-mas.avif",
+    "title": "Torneo Aniversario",
+    "location": {
+      "city": "Sogamoso",
+      "address": "Canchas El Campín"
+    },
+    "date": "15 Ago - 30 Ago",
+    "income": "320.000"
+  },
+  {
+    "id": "11",
+    "availability": "Próximamente",
+    "genre": "Femenino",
+    "image": "images/torneo-fem.avif",
+    "title": "Copa Estrellas",
+    "location": {
+      "city": "Tunja",
+      "address": "Canchas La Glorieta"
+    },
+    "date": "10 Sep - 25 Sep",
+    "income": "350.000"
+  },
+  {
+    "id": "12",
+    "availability": "Abierto",
+    "genre": "Mixto",
+    "image": "images/torneo-mas.avif",
+    "title": "Torneo de Cierre de Año",
+    "location": {
+      "city": "Duitama",
+      "address": "Canchas El Salitre"
+    },
+    "date": "1 Dic - 15 Dic",
+    "income": "400.000"
+  },
+  {
+    "id": "13",
+    "availability": "Últimos cupos",
+    "genre": "Masculino",
+    "image": "images/torneo-mas.avif",
+    "title": "Copa Navideña",
+    "location": {
+      "city": "Chiquinquirá",
+      "address": "Polideportivo"
+    },
+    "date": "15 Dic - 30 Dic",
+    "income": "450.000"
+  }
+]
