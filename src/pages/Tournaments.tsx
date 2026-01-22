@@ -1,11 +1,14 @@
-import { tournament } from '@/lib/tournament'
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { GiTrophy } from "react-icons/gi";
 import { useState } from 'react';
 import type { Tournament } from '@/models/tournament'
+import { useFetchApiTournaments } from '@/hooks/useFetchApi'
+import { Pagination } from "@/components/common/Pagination";
 
 export const Tournaments = () => {
+  const {tournamentList} = useFetchApiTournaments()
+
   const [register, setRegister] = useState<string[]>([])
   const MAX = 3
   
@@ -18,15 +21,23 @@ export const Tournaments = () => {
       }
       return [...prev, title]
     })
-}
+  }
+
+  const handleUnRegister = (title: string) => {
+
+    const filteredItems = register.filter(item => item !== title)
+    setRegister(filteredItems)
+    return filteredItems
+  }
+
 
   return (
     <section className="max-w-5xl mx-auto mt-5">
       <h1 className="my-5 text-3xl font-bold">Explora Nuestros Torneos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center mb-10 gap-5">
-        {tournament.map((tournament: Tournament, index: number) => (
+        {tournamentList.map((tournament: Tournament) => (
           <div
-            key={index}
+            key={tournament.id}
             className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-62 h-full"
           >
             <img
@@ -73,21 +84,29 @@ export const Tournaments = () => {
                   </h3>
                   <div className='flex flex-col gap-2'>
                     <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><FaRegCalendarAlt /> {tournament.date}</span>
-                    <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><MdLocationPin /> {tournament.location}</span>
+                    <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><MdLocationPin /> {tournament.location.city}, {tournament.location.address}</span>
                     <span className='text-xs text-green-900/60 flex justify-start items-center gap-1'><GiTrophy /> Precio: ${tournament.income}</span>
                   </div>
                 </div>
               </div>
               
             </div>
-            <div className="flex flex-col px-3 py-2 mx-auto">
-              <button onClick={() => handleRegister(tournament.title)} disabled={register.includes(tournament.title) || tournament.availability === 'Finalizado' } className={` ${register.includes(tournament.title) || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark hover:bg-btn-dark/90'} block mx-auto  transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg`}>
+            <div className="flex gap-3 px-3 py-2 mx-auto">
+              <button onClick={() => handleRegister(tournament.title)} disabled={register.includes(tournament.title) || tournament.availability === 'Finalizado' } className={` ${register.includes(tournament.title) || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark/80 hover:bg-btn-dark'} block mx-auto  transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg`}>
                 {tournament.availability === 'Finalizado'  ? 'Finalizado' : register.includes(tournament.title) ? 'Inscrito' : 'Inscribirse'}
               </button>
+              {
+                register.includes(tournament.title) && (
+                  <button onClick={() => handleUnRegister(tournament.title)} className="bg-red-400 hover:bg-red-500 transition-colors text-white text-xs px-3 py-2 rounded-lg cursor-pointer">
+                    Cancelar
+                  </button>
+                )
+              }
             </div>
           </div>
         ))}
       </div>
+      <Pagination cuantity={5}/>
     </section>
   )
 }
