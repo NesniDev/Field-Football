@@ -1,7 +1,9 @@
-import { tournament } from '@/lib/tournament'
 import { NavLink } from 'react-router-dom'
+import type { Tournament } from '@/models/tournament'
+import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 
-export const Tournament = () => {
+export const HomeTournament = () => {
+  const {tournamentList} = useFetchApiTournaments()
   return (
     <section className="my-20">
       <h2 className="text-5xl font-bold capitalize text-center mb-6">
@@ -11,9 +13,9 @@ export const Tournament = () => {
         Compite y demuestra quién es el mejor en la cancha.
       </p>
       <div className="flex flex-wrap items-center justify-center gap-4 place-self-center mt-5">
-        {tournament.slice(0, 2).map((tournament, index) => (
+        {tournamentList.slice(0, 2).map((tournament: Tournament) => (
           <div
-            key={index}
+            key={tournament.id}
             className="flex flex-col justify-center items-end bg-white rounded-xl overflow-hidden transition w-[500px] h-full relative group cursor-pointer"
           >
             <div className="relative">
@@ -45,7 +47,7 @@ export const Tournament = () => {
                     {tournament.title}
                 </h3>
                 <p className="text-xs text-gray-100/50 ">
-                    {tournament.location}
+                    {tournament.location.city}, {tournament.location.address}
                 </p>
             </div>
           </div>
