@@ -2,15 +2,40 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { GiTrophy } from "react-icons/gi";
 import { useState } from 'react';
+import type { Tournament } from '@/models/tournament'
+import { useFetchApiTournaments } from '@/hooks/useFetchApi'
+import { Pagination } from "@/components/common/Pagination";
 
 export const Tournaments = () => {
-  const [register, setRegister] = useState('')
+  const {tournamentList} = useFetchApiTournaments()
+
+  const [register, setRegister] = useState<string[]>([])
+  const MAX = 3
   
+  const handleRegister = (title: string) => {
+    setRegister(prev => {
+      if (prev.includes(title)) return prev
+      if (prev.length >= MAX) {
+        alert('Ya has inscrito el máximo de torneos')
+        return prev
+      }
+      return [...prev, title]
+    })
+  }
+
+  const handleUnRegister = (title: string) => {
+
+    const filteredItems = register.filter(item => item !== title)
+    setRegister(filteredItems)
+    return filteredItems
+  }
+
+
   return (
     <section className="max-w-5xl mx-auto mt-5">
       <h1 className="my-5 text-3xl font-bold">Explora Nuestros Torneos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center mb-10 gap-5">
-        {tournament.map((tournament, index) => (
+        {tournamentList.map((tournament: Tournament) => (
           <div
             key={tournament.id}
             className="flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-62 h-full"
@@ -66,9 +91,9 @@ export const Tournaments = () => {
               </div>
               
             </div>
-            <div className="flex flex-col px-3 py-2 mx-auto">
-              <button onClick={() => setRegister(tournament.title)} disabled={register === tournament.title || tournament.availability === 'Finalizado'} className={` ${register === tournament.title || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark hover:bg-btn-dark/90'} block mx-auto  transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg`}>
-                {tournament.availability === 'Finalizado'  ? 'Finalizado' : register === tournament.title ? 'Inscrito' : 'Inscribirse'}
+            <div className="flex gap-3 px-3 py-2 mx-auto">
+              <button onClick={() => handleRegister(tournament.title)} disabled={register.includes(tournament.title) || tournament.availability === 'Finalizado' } className={` ${register.includes(tournament.title) || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark/80 hover:bg-btn-dark'} block mx-auto  transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-3 py-2 text-xs rounded-lg`}>
+                {tournament.availability === 'Finalizado'  ? 'Finalizado' : register.includes(tournament.title) ? 'Inscrito' : 'Inscribirse'}
               </button>
               {
                 register.includes(tournament.title) && (
