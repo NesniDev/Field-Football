@@ -3,7 +3,7 @@ import { corsMiddleware } from './middleware/cors.js'
 import { tournamentsRouter } from './routes/tournaments.js'
 import { fieldsRouter } from './routes/fields.js'
 
-const PORT = process.env.PORT || 1234
+const PORT = 3000 ?? 1234
 const app = express()
 app.use(corsMiddleware())
 app.use(express.json())
