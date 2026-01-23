@@ -2,18 +2,18 @@ import { useState } from 'react'
 import type { Tournament } from '@/models/tournament'
 import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 import { Pagination } from '@/components/common/Pagination'
-import { CardTournaments } from '@/components/Tournaments/CardTournaments'
+import { CardTournaments } from '@/components/Cards/CardTournaments'
 
 const RESULT_PER_PAGE = 3
 
 export const Tournaments = () => {
-  const { tournamentList, loading } = useFetchApiTournaments()
+  const { data, isLoading } = useFetchApiTournaments()
   const [currentPage, setCurrentPage] = useState(1)
   const [register, setRegister] = useState<string[]>([])
   const MAX = 3
 
-  const totalPages = Math.ceil(tournamentList.length / RESULT_PER_PAGE)
-  const pageResults = tournamentList.slice(
+  const totalPages = Math.ceil(data.length / RESULT_PER_PAGE)
+  const pageResults = data.slice(
     (currentPage - 1) * RESULT_PER_PAGE,
     currentPage * RESULT_PER_PAGE
   )
@@ -42,7 +42,7 @@ export const Tournaments = () => {
     <section className="max-w-5xl mx-auto mt-5">
       <h1 className="my-7 text-3xl font-bold">Explora Nuestros Torneos</h1>
 
-      {loading ? (
+      {isLoading ? (
         <div className="flex-col gap-4 w-full flex items-center justify-center">
           <div className="w-20 h-20 border-4 border-transparent text-green-400 text-4xl animate-spin flex items-center justify-center border-t-green-400 rounded-full">
             <div className="w-16 h-16 border-4 border-transparent text-green-700 text-2xl animate-spin flex items-center justify-center border-t-green-700 rounded-full"></div>
@@ -50,9 +50,9 @@ export const Tournaments = () => {
         </div>
       ) : (
         <div
-          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5 ${loading ? 'bg-red-500 ' : ''}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5`}
         >
-          {tournamentList.length === 0 ? (
+          {data.length === 0 ? (
             <div>
               <p className="text-center mx-auto">
                 No hay torneos disponibles...
@@ -74,7 +74,7 @@ export const Tournaments = () => {
         </div>
       )}
 
-      {!loading && tournamentList.length > 0 && (
+      {!isLoading && data.length > 0 && (
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

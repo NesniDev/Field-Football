@@ -1,24 +1,15 @@
-import type { Tournament } from "@/models/tournament"
-import { useEffect, useState } from "react"
+import useTournamentStore from "@/store/useTournament.store"
+import { useEffect} from "react"
 
 export const useFetchApiTournaments = () => {
-  const [tournamentList, setTournamentList] = useState<Tournament[]>([])
-    const [loading, setLoading] = useState(true)
+  const {data,isLoading,fetchData} = useTournamentStore()
 
   useEffect(() => {
-    async function fetchTournament () {
-      const response = await fetch('https://backend-eight-rose-88.vercel.app/tournaments')
-      const data = await response.json()
-      setTournamentList(data)
-      setLoading(false)
-    }
-
-    fetchTournament()
-  }, [])
+    fetchData()
+  }, [fetchData])
 
   return{
-    tournamentList,
-    setTournamentList,
-    loading    
+    isLoading,
+    data    
   }
 }

@@ -1,4 +1,4 @@
-import { fields } from "@/lib/fields"
+import useFieldsFetchStore from "@/store/useFieldsFetch.store"
 import { useReservationStore } from "@/store/useReservationStore"
 
 
@@ -6,7 +6,8 @@ import { useReservationStore } from "@/store/useReservationStore"
 export const useReservations = () => {
   const {selectedField, reservationDate, startTime, price} = useReservationStore()
 
-    const info = fields.find(item => item.slug)
+  const {data: fields} = useFieldsFetchStore()
+    const info = fields.find(item => item.slug === selectedField?.slug)
 
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
