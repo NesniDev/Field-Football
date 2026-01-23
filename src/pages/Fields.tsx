@@ -10,7 +10,7 @@ import { useState } from "react";
 const RESULT_PER_PAGE = 5
 export const Fields = () => {
     
-    const {setQuery, clean,handleSubmit,results,query} = useFields()
+    const {setQuery, clean,handleSubmit,results,query,loading} = useFields()
 
     const [currentPage, setCurrentPage] = useState<number>(1)
 
@@ -34,7 +34,14 @@ export const Fields = () => {
                     }
                 </form>
                 <section className="flex flex-wrap items-center justify-center gap-4 my-8 font-orbitron">
-                    {
+                  {loading ? (
+                    <div className="flex-col gap-4 w-full flex items-center justify-center">
+                      <div className="w-20 h-20 border-4 border-transparent text-green-400 text-4xl animate-spin flex items-center justify-center border-t-green-400 rounded-full">
+                        <div className="w-16 h-16 border-4 border-transparent text-green-700 text-2xl animate-spin flex items-center justify-center border-t-green-700 rounded-full"></div>
+                      </div>
+                    </div>
+                  ) : (
+                    
                       pagesResults.length > 0 ? pagesResults.map((field, index) => (
 
                         <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
@@ -50,10 +57,10 @@ export const Fields = () => {
                       )) : (
                         <p className="text-center text-gray-600 font-semibold text-lg mt-8 ">No se encontraron resultados</p>
                       )
-                    }
+                    )}
                 </section>
+            { !loading && <Pagination onPageChange={handleOnPageChange} currentPage={currentPage} totalPages={totalPages}/>}
             </div>
-            <Pagination onPageChange={handleOnPageChange} currentPage={currentPage} totalPages={totalPages}/>
         </>
     )
 }

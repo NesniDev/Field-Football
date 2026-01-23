@@ -3,12 +3,14 @@ import { useEffect, useState } from "react"
 
 export const useFetchApiTournaments = () => {
   const [tournamentList, setTournamentList] = useState<Tournament[]>([])
-  
+    const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     async function fetchTournament () {
-      const response = await fetch('http://localhost:1234/tournaments')
+      const response = await fetch('https://backend-eight-rose-88.vercel.app/tournaments')
       const data = await response.json()
       setTournamentList(data)
+      setLoading(false)
     }
 
     fetchTournament()
@@ -17,6 +19,6 @@ export const useFetchApiTournaments = () => {
   return{
     tournamentList,
     setTournamentList,
-    
+    loading    
   }
 }

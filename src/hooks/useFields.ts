@@ -22,10 +22,11 @@ interface FieldItem {
 export const useFields = () => {
   const [query, setQuery] = useState<string>('')
   const [fieldData, setFieldData] = useState<FieldItem[]>([])
-    const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)  
+  const navigate = useNavigate()
     const location = useLocation()
+
   
-console.log(fieldData)
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             if(!query.trim()) return // evita consulats vacias
@@ -39,10 +40,11 @@ console.log(fieldData)
 
     useEffect(()=>{
       async function fetchField(){
-        const response = await fetch('http://localhost:1234/fields')
+        const response = await fetch('https://backend-eight-rose-88.vercel.app/fields')
         const data = await response.json()
         
         setFieldData(data)
+        setLoading(false)
       }
 
       fetchField()
@@ -61,7 +63,7 @@ console.log(fieldData)
       results,
       query,
       fieldData,
-      
+      loading,
       setQuery,
       handleSubmit,
       clean
