@@ -4,15 +4,14 @@ import { useEffect, useState } from "react"
 export const useFetchApiTournaments = () => {
   const [tournamentList, setTournamentList] = useState<Tournament[]>([])
   
-
   useEffect(() => {
-    async function fetchTour () {
+    async function fetchTournament () {
       const response = await fetch('http://localhost:1234/tournaments')
       const data = await response.json()
       setTournamentList(data)
     }
 
-    fetchTour()
+    fetchTournament()
   }, [])
 
   return{

@@ -6,12 +6,17 @@ import { useFields } from "@/hooks/useFields";
 import { Pagination } from "@/components/common/Pagination";
 import { useState } from "react";
 
+
+const RESULT_PER_PAGE = 5
 export const Fields = () => {
     
     const {setQuery, clean,handleSubmit,results,query} = useFields()
 
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const totalPages = 5
+
+
+    const totalPages = Math.ceil(results.length / RESULT_PER_PAGE)
+    const pagesResults = results.slice((currentPage - 1) * RESULT_PER_PAGE, currentPage * RESULT_PER_PAGE)
 
     const handleOnPageChange = (page: number) => {
       setCurrentPage(page)
@@ -30,7 +35,7 @@ export const Fields = () => {
                 </form>
                 <section className="flex flex-wrap items-center justify-center gap-4 my-8 font-orbitron">
                     {
-                      results.length > 0 ? results.map((field, index) => (
+                      pagesResults.length > 0 ? pagesResults.map((field, index) => (
 
                         <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
                           <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>

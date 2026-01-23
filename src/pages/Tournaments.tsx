@@ -43,9 +43,13 @@ export const Tournaments = () => {
       <h1 className="my-7 text-3xl font-bold">Explora Nuestros Torneos</h1>
       
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5">
       {
-        
+        tournamentList.length === 0 ? (
+          <div>
+              <p className='text-center mx-auto'>No hay torneos disponibles...</p>
+            </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5">{
         pageResults.map((tournament: Tournament) => (
           <CardTournaments 
           key={tournament.id} 
@@ -55,11 +59,12 @@ export const Tournaments = () => {
               onUnRegister={() => handleUnRegister(tournament.title)}
               
             />
-          ))
+          ))}
+      </div>
+        )
       }
         
-      </div>
-      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handleOnPageChange}/>
+      { tournamentList.length > 0 && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handleOnPageChange}/>}
     </section>
   )
 }

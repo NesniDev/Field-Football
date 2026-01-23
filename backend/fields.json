@@ -1,0 +1,368 @@
+[
+  {
+  "id": 1,
+  "image": "/images/cancha-1.avif",
+  "title": "El Barcelona",
+  "slug": "el-barcelona",
+  "address": "Barrio Surinema",
+  "description": "La cancha El Barcelona es un espacio deportivo de primer nivel que combina calidad y comodidad. Nuestras instalaciones cuentan con un sistema de drenaje avanzado que garantiza un juego óptimo incluso después de fuertes lluvias. El área de juego está rodeada por una malla de protección de alta resistencia y cuenta con gradas techadas para el disfrute de los espectadores. La cancha es ampliamente utilizada para torneos locales y partidos amistosos, ofreciendo una experiencia deportiva inigualable en un ambiente seguro y agradable.",
+  "characteristics": {
+    "grassType": "Césped sintético de última generación (50mm)",
+    "dimensions": "40m x 20m",
+    "lighting": "Sistema de iluminación LED de alta potencia",
+    "availability": "Lunes a Domingo: 6:00 AM - 10:00 PM"
+  },
+  "services": [
+    "Vestuarios con duchas",
+    "Almacén de bebidas y snacks",
+    "Alquiler de balones y petos",
+    "Parqueadero vigilado",
+    "Sistema de sonido ambiental",
+    "Área de descanso con sillas y mesas",
+    "Servicio de árbitros certificados"
+  ],
+  "punctuation": "5.0",
+  "price": "60.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
+},
+{
+  "id": 2,
+  "image": "/images/cancha-2.avif",
+  "title": "La Fiera",
+  "slug": "la-fiera",
+  "address": "Barrio la pola",
+  "description": "La Fiera es sinónimo de pasión por el fútbol. Nuestra cancha se destaca por su excelente mantenimiento y superficie de juego profesional, ideal tanto para entrenamientos como para partidos de alta competencia. El lugar cuenta con un ambiente familiar y seguro, con iluminación profesional que permite disfrutar del fútbol a cualquier hora del día. La cancha está diseñada para ofrecer el máximo rendimiento deportivo, con marcaciones profesionales y redes de alta calidad en los arcos.",
+  "characteristics": {
+    "grassType": "Césped sintético profesional (45mm)",
+    "dimensions": "42m x 22m",
+    "lighting": "Torres de iluminación de 2000W",
+    "availability": "Lunes a Sábado: 7:00 AM - 11:00 PM, Domingo: 8:00 AM - 9:00 PM"
+  },
+  "services": [
+    "Vestuarios con duchas y baños",
+    "Tienda de artículos deportivos",
+    "Servicio de hidratación",
+    "Alquiler de equipamiento deportivo",
+    "Cámaras de seguridad 24/7",
+    "Área de calentamiento",
+    "Servicio de primeros auxilios"
+  ],
+  "punctuation": "5.0",
+  "price": "60.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
+},
+{
+  "id": 3,
+  "image": "/images/cancha-3.avif",
+  "title": "Camelot",
+  "slug": "camelot",
+  "address": "Centro de eventos Camelot",
+  "description": "Ubicada en el exclusivo Centro de Eventos Camelot, esta cancha ofrece una experiencia deportiva premium. El diseño de la cancha cumple con los estándares internacionales, con un sistema de drenaje que permite su uso inmediatamente después de lluvias intensas. Las instalaciones incluyen áreas verdes alrededor de la cancha, creando un ambiente agradable y relajado. Es el lugar ideal para torneos corporativos, partidos amistosos y eventos deportivos especiales, con capacidad para albergar a un gran número de espectadores cómodamente.",
+  "characteristics": {
+    "grassType": "Césped sintético de alto rendimiento (55mm)",
+    "dimensions": "44m x 24m",
+    "lighting": "Sistema de iluminación profesional para transmisiones",
+    "availability": "Todos los días: 5:00 AM - 12:00 AM"
+  },
+  "services": [
+    "Amplio estacionamiento privado",
+    "Restaurante y bar temático",
+    "Cabinas de transmisión",
+    "Sala de juntas para equipos",
+    "Servicio de masajes deportivos",
+    "Alquiler de equipos profesionales",
+    "Sistema de riego automático",
+    "Área VIP con vista privilegiada"
+  ],
+  "punctuation": "5.0",
+  "price": "60.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
+},
+{
+  "id": 4,
+  "image": "/images/cancha-4.avif",
+  "title": "La Futbolera",
+  "slug": "la-futbolera",
+  "address": "Avenida Julio Salazar",
+  "description": "La Futbolera se ha convertido en un referente del fútbol local gracias a su excelente ubicación y sus instalaciones de primer nivel. La cancha cuenta con un sistema de iluminación de última tecnología que permite jugar cómodamente durante la noche. La superficie de juego, renovada recientemente, ofrece un rebote perfecto del balón y una excelente tracción. El lugar es punto de encuentro de equipos amateurs y semiprofesionales que buscan un espacio de calidad para sus entrenamientos y partidos. La cancha está rodeada por una zona de esparcimiento con áreas verdes y asientos para espectadores.",
+  "characteristics": {
+    "grassType": "Césped sintético de fibra larga (48mm)",
+    "dimensions": "41m x 21m",
+    "lighting": "Iluminación de 1800 lúmenes",
+    "availability": "Lunes a Viernes: 6:00 AM - 11:00 PM, Fines de semana: 7:00 AM - 10:00 PM"
+  },
+  "services": [
+    "Sistema de reservas en línea",
+    "Tienda de artículos deportivos",
+    "Servicio de cafetería",
+    "Alquiler de equipamiento deportivo",
+    "Área de juegos infantiles",
+    "Servicio de fotografía deportiva",
+    "Parrilla y zona de asados",
+    "WiFi gratuito"
+  ],
+  "punctuation": "5.0",
+  "price": "60.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
+},
+{
+  "id": 5,
+  "image": "/images/cancha-4.avif",
+  "title": "El Campín de Oro",
+  "slug": "el-campin-de-oro",
+  "address": "Barrio San Francisco",
+  "description": "Ubicada en el corazón del barrio San Francisco, El Campín de Oro ofrece una experiencia futbolística única con su cancha de fútbol 7 de última generación. La superficie de juego está diseñada para ofrecer un rendimiento óptimo, con un sistema de drenaje que permite su uso incluso después de fuertes lluvias. El lugar cuenta con graderías techadas para los espectadores y un ambiente familiar que lo hace ideal para torneos locales y partidos amistosos.",
+  "characteristics": {
+    "grassType": "Césped sintético profesional (50mm)",
+    "dimensions": "45m x 25m",
+    "lighting": "Iluminación LED de 2000W",
+    "availability": "Lunes a Domingo: 6:00 AM - 11:00 PM"
+  },
+  "services": [
+    "Vestuarios con duchas",
+    "Almacén de bebidas y snacks",
+    "Alquiler de balones y petos",
+    "Parqueadero vigilado",
+    "Sistema de sonido ambiental",
+    "Área de descanso con sillas y mesas",
+    "Servicio de árbitros certificados"
+  ],
+  "punctuation": "4.9",
+  "price": "65.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789012"
+},
+{
+  "id": 6,
+  "image": "/images/cancha-4.avif",
+  "title": "La Cantera Deportiva",
+  "slug": "la-cantera-deportiva",
+  "address": "Calle 25 #15-30",
+  "description": "La Cantera Deportiva es un complejo moderno que combina deporte y entretenimiento. Con una cancha de fútbol 7 de alta gama, es el lugar preferido por equipos juveniles y adultos que buscan un espacio profesional para sus entrenamientos y partidos. Las instalaciones incluyen vestuarios amplios, iluminación profesional y una zona de espectadores con vista privilegiada a la cancha.",
+  "characteristics": {
+    "grassType": "Césped sintético de fibra larga (55mm)",
+    "dimensions": "44m x 24m",
+    "lighting": "Sistema de iluminación profesional 2000W",
+    "availability": "Lunes a Domingo: 5:30 AM - 11:30 PM"
+  },
+  "services": [
+    "Vestuarios con taquillas",
+    "Tienda deportiva",
+    "Servicio de hidratación",
+    "Alquiler de equipamiento",
+    "Cámaras de seguridad",
+    "Área de calentamiento",
+    "Servicio de primeros auxilios"
+  ],
+  "punctuation": "4.8",
+  "price": "70.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789013"
+},
+{
+  "id": 7,
+  "image": "/images/cancha-4.avif",
+  "title": "Estrella Roja FC",
+  "slug": "estrella-roja-fc",
+  "address": "Diagonal 45 #12-45",
+  "description": "Con una ubicación privilegiada en el centro de la ciudad, Estrella Roja FC ofrece una experiencia deportiva de primer nivel. La cancha cuenta con un sistema de drenaje avanzado que permite su uso en cualquier condición climática. El lugar es reconocido por su excelente mantenimiento y la calidad de su superficie de juego, ideal para partidos de alta competencia.",
+  "characteristics": {
+    "grassType": "Césped sintético profesional (52mm)",
+    "dimensions": "43m x 23m",
+    "lighting": "Iluminación LED de 2200W",
+    "availability": "Lunes a Domingo: 6:00 AM - 11:00 PM"
+  },
+  "services": [
+    "Vestuarios con agua caliente",
+    "Almacén de bebidas energéticas",
+    "Alquiler de balones profesionales",
+    "Parqueadero cubierto",
+    "Sistema de sonido",
+    "Área de descanso con sillas",
+    "Servicio de árbitros profesionales"
+  ],
+  "punctuation": "4.9",
+  "price": "75.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789014"
+},
+{
+  "id": 8,
+  "image": "/images/cancha-4.avif",
+  "title": "Los Pioneros",
+  "slug": "los-pioneros",
+  "address": "Carrera 68 #45-23",
+  "description": "Los Pioneros es un complejo deportivo familiar que cuenta con una de las canchas más amplias de la ciudad. La superficie de juego está diseñada para ofrecer un rebote perfecto del balón y una excelente tracción. El lugar es punto de encuentro de equipos amateurs y semiprofesionales que buscan un espacio de calidad para sus entrenamientos y partidos.",
+  "characteristics": {
+    "grassType": "Césped sintético de fibra larga (50mm)",
+    "dimensions": "46m x 26m",
+    "lighting": "Iluminación profesional 2100W",
+    "availability": "Lunes a Domingo: 6:00 AM - 10:30 PM"
+  },
+  "services": [
+    "Vestuarios espaciosos",
+    "Tienda de artículos deportivos",
+    "Servicio de cafetería",
+    "Alquiler de equipamiento deportivo",
+    "Área de juegos infantiles",
+    "Servicio de fotografía deportiva",
+    "Parrilla y zona de asados"
+  ],
+  "punctuation": "4.7",
+  "price": "68.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789015"
+},
+{
+  "id": 9,
+  "image": "/images/cancha-4.avif",
+  "title": "La Fortaleza",
+  "slug": "la-fortaleza",
+  "address": "Avenida Boyacá #45-67",
+  "description": "La Fortaleza es mucho más que una cancha de fútbol, es un centro deportivo integral que ofrece instalaciones de primer nivel. La cancha principal cuenta con un sistema de iluminación profesional que permite jugar cómodamente durante la noche. El lugar es ideal para torneos corporativos, partidos amistosos y eventos deportivos especiales, con capacidad para albergar a un gran número de espectadores cómodamente.",
+  "characteristics": {
+    "grassType": "Césped sintético de alto rendimiento (55mm)",
+    "dimensions": "47m x 27m",
+    "lighting": "Sistema de iluminación profesional 2300W",
+    "availability": "Todos los días: 5:00 AM - 11:30 PM"
+  },
+  "services": [
+    "Amplio estacionamiento privado",
+    "Restaurante y bar temático",
+    "Cabinas de transmisión",
+    "Sala de juntas para equipos",
+    "Servicio de masajes deportivos",
+    "Alquiler de equipos profesionales",
+    "Sistema de riego automático",
+    "Área VIP con vista privilegiada"
+  ],
+  "punctuation": "5.0",
+  "price": "80.000",
+  "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789016"
+},
+{
+  "id": 10,
+  "image": "/images/cancha-4.avif",
+  "title": "El Coliseo Deportivo",
+  "slug": "el-coliseo-deportivo",
+  "address": "Calle 100 #15-60",
+  "description": "El Coliseo Deportivo es un referente en la ciudad por su excelente ubicación y sus instalaciones de primer nivel. La cancha cuenta con un sistema de iluminación de última tecnología que permite jugar cómodamente durante la noche. La superficie de juego, renovada recientemente, ofrece un rebote perfecto del balón y una excelente tracción.",
+  "characteristics": {
+    "grassType": "Césped sintético profesional (53mm)",
+    "dimensions": "45m x 25m",
+    "lighting": "Iluminación LED de 2400W",
+    "availability": "Lunes a Domingo: 5:30 AM - 11:00 PM"
+  },
+  "services": [
+    "Vestuarios con agua caliente",
+    "Almacén de bebidas energéticas",
+    "Alquiler de balones profesionales",
+    "Parqueadero cubierto",
+    "Sistema de sonido ambiental",
+    "Área de descanso con sillas y mesas",
+    "Servicio de árbitros profesionales"
+  ],
+  "punctuation": "4.9",
+  "price": "78.000",
+  "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789017"
+},
+{
+  "id": 11,
+  "image": "/images/cancha-1.avif",
+  "title": "La Academia",
+  "slug": "la-academia",
+  "address": "Carrera 45 #12-34",
+  "description": "La Academia es un centro de formación deportiva que cuenta con una cancha de fútbol 7 de última generación. El lugar es ideal para entrenamientos técnicos, partidos amistosos y torneos. La cancha está rodeada por una zona de esparcimiento con áreas verdes y asientos para espectadores, creando un ambiente agradable y familiar.",
+  "characteristics": {
+    "grassType": "Césped sintético de fibra larga (48mm)",
+    "dimensions": "44m x 24m",
+    "lighting": "Iluminación profesional 2000W",
+    "availability": "Lunes a Sábado: 6:00 AM - 10:00 PM, Domingo: 7:00 AM - 9:00 PM"
+  },
+  "services": [
+    "Vestuarios con duchas",
+    "Tienda de artículos deportivos",
+    "Servicio de cafetería saludable",
+    "Alquiler de equipamiento deportivo",
+    "Área de juegos infantiles",
+    "Servicio de fotografía deportiva",
+    "WiFi gratuito"
+  ],
+  "punctuation": "4.8",
+  "price": "72.000",
+  "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789018"
+},
+{
+  "id": 12,
+  "image": "/images/cancha-2.avif",
+  "title": "El Estadio Pequeño",
+  "slug": "el-estadio-pequeno",
+  "address": "Avenida Las Américas #23-45",
+  "description": "Con un diseño que emula a los grandes estadios, El Estadio Pequeño ofrece una experiencia única para los amantes del fútbol. La cancha cuenta con graderías techadas, marcaciones profesionales y un sistema de sonido ambiental que hace sentir a los jugadores como verdaderas estrellas. El lugar es ideal para torneos corporativos y eventos especiales.",
+  "characteristics": {
+    "grassType": "Césped sintético profesional (55mm)",
+    "dimensions": "46m x 26m",
+    "lighting": "Sistema de iluminación profesional 2500W",
+    "availability": "Lunes a Domingo: 5:00 AM - 11:00 PM"
+  },
+  "services": [
+    "Gradas techadas para espectadores",
+    "Cabina de transmisión",
+    "Tienda oficial de merchandising",
+    "Servicio de catering",
+    "Área VIP",
+    "Estacionamiento vigilado",
+    "Servicio de enfermería"
+  ],
+  "punctuation": "5.0",
+  "price": "85.000",
+  "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789019"
+},
+{
+  "id": 13,
+  "image": "/images/cancha-3.avif",
+  "title": "La Canchita Mágica",
+  "slug": "la-canchita-magica",
+  "address": "Calle 80 #12-34",
+  "description": "La Canchita Mágica es un espacio diseñado para disfrutar del fútbol en un ambiente familiar y seguro. La cancha cuenta con una superficie de juego suave y uniforme, ideal para jugadores de todas las edades. El lugar ofrece una excelente relación calidad-precio y es perfecto para partidos recreativos y entrenamientos.",
+  "characteristics": {
+    "grassType": "Césped sintético estándar (45mm)",
+    "dimensions": "42m x 22m",
+    "lighting": "Iluminación LED de 1800W",
+    "availability": "Lunes a Sábado: 6:00 AM - 10:00 PM, Domingo: 8:00 AM - 8:00 PM"
+  },
+  "services": [
+    "Vestuarios básicos",
+    "Venta de bebidas",
+    "Alquiler de balones",
+    "Parqueadero no cubierto",
+    "Área de espera con bancas",
+    "Servicio de árbitros (bajo solicitud)"
+  ],
+  "punctuation": "4.5",
+  "price": "55.000",
+  "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789020"
+},
+{
+  "id": 14,
+  "image": "/images/cancha-4.avif",
+  "title": "El Rincón del Gol",
+  "slug": "el-rincon-del-gol",
+  "address": "Carrera 23 #45-67",
+  "description": "Ubicado en una zona tranquila de la ciudad, El Rincón del Gol es el lugar perfecto para los amantes del fútbol que buscan un ambiente relajado. La cancha cuenta con una superficie de juego en excelente estado y un sistema de iluminación que permite disfrutar del deporte hasta altas horas de la noche. El lugar es ideal para partidos entre amigos y equipos amateurs que buscan diversión y buen fútbol.",
+  "characteristics": {
+    "grassType": "Césped sintético estándar (48mm)",
+    "dimensions": "43m x 23m",
+    "lighting": "Iluminación LED de 1900W",
+    "availability": "Lunes a Domingo: 6:00 AM - 11:00 PM"
+  },
+  "services": [
+    "Vestuarios con duchas",
+    "Tienda de snacks y bebidas",
+    "Alquiler de balones y petos",
+    "Parqueadero vigilado",
+    "Sistema de sonido ambiental",
+    "Área de descanso",
+    "Servicio de árbitros"
+  ],
+  "punctuation": "4.6",
+  "price": "60.000",
+  "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789021"
+}
+]
