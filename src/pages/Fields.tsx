@@ -4,10 +4,18 @@ import { TbSoccerField  } from "react-icons/tb";
 import { IoMdCloseCircle   } from "react-icons/io";
 import { useFields } from "@/hooks/useFields";
 import { Pagination } from "@/components/common/Pagination";
+import { useState } from "react";
 
 export const Fields = () => {
     
     const {setQuery, clean,handleSubmit,results,query} = useFields()
+
+    const [currentPage, setCurrentPage] = useState<number>(1)
+    const totalPages = 5
+
+    const handleOnPageChange = (page: number) => {
+      setCurrentPage(page)
+    }
 
     return (
         <>
@@ -40,7 +48,7 @@ export const Fields = () => {
                     }
                 </section>
             </div>
-            <Pagination cuantity={6}/>
+            <Pagination onPageChange={handleOnPageChange} currentPage={currentPage} totalPages={totalPages}/>
         </>
     )
 }

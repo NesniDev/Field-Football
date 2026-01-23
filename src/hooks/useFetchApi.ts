@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 
 export const useFetchApiTournaments = () => {
   const [tournamentList, setTournamentList] = useState<Tournament[]>([])
+  
+
   useEffect(() => {
     async function fetchTour () {
       const response = await fetch('http://localhost:1234/tournaments')
@@ -15,6 +17,7 @@ export const useFetchApiTournaments = () => {
 
   return{
     tournamentList,
-    setTournamentList
+    setTournamentList,
+    
   }
 }
