@@ -11,8 +11,10 @@ app.use(express.json())
 app.use('/tournaments', tournamentsRouter)
 app.use('/fields', fieldsRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+  })
+}
 
 export default app
