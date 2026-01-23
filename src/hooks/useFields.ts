@@ -1,27 +1,9 @@
 import useFieldsFetchStore from "@/store/useFieldsFetch.store";
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
-interface FieldItem {
-    image: string;
-    title: string;
-    slug: string;
-    address: string;
-    description: string;
-    characteristics: {
-        grassType: string;
-        dimensions: string;
-        lighting: string;
-        availability: string;
-    };
-    services: string[];
-    punctuation: string;
-    price: string;
-    ubication: string;
-}
-
 export const useFields = () => {
-  const {data, isLoading, error, fetchData } = useFieldsFetchStore()
+  
   
   const [query, setQuery] = useState<string>('')
 
@@ -41,17 +23,15 @@ export const useFields = () => {
         navigateTo('/fields')
     }
 
-    useEffect(()=>{
-      fetchData()
-    }, [fetchData])
-
     const params = new URLSearchParams(location.search)
 
     const queryParams = params.get('q') || ""
     
-    const results = data.filter((item: FieldItem) =>
-    item.title.toLowerCase().includes(queryParams.toLowerCase())
-    );
+    const data = useFieldsFetchStore(state => state.data)
+    const results = data.filter(field => field.title.toLowerCase().includes(queryParams.toLowerCase()))
+
+    const isLoading = useFieldsFetchStore(state => state.isLoading)
+    const error = useFieldsFetchStore(state => state.error)
 
 
     return {

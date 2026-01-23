@@ -14,8 +14,21 @@ import { FAQ } from '@/pages/FAQ'
 import { ScrollToTop } from './utils/Scroll.ts'
 import { Payment } from './pages/Payment'
 import { Receipt } from '@/pages/Receipt.tsx'
+import { useEffect } from 'react'
+import useFieldsFetchStore from './store/useFieldsFetch.store.ts'
+import useTournamentStore from './store/useTournament.store.ts'
 
 const AppRoutes = () => {
+  const {fetchData} = useFieldsFetchStore()
+  const {fetchData: fetchTournamentData} = useTournamentStore()
+
+  useEffect(()=>{
+    fetchData()
+  }, [fetchData])
+  
+  useEffect(()=>{
+    fetchTournamentData()
+  }, [fetchTournamentData])
  
   const routes = useRoutes([
     {
@@ -61,6 +74,7 @@ const AppRoutes = () => {
     
 
   ])
+  
   return routes
     
 }

@@ -1,12 +1,7 @@
 import useTournamentStore from "@/store/useTournament.store"
-import { useEffect} from "react"
 
 export const useFetchApiTournaments = () => {
-  const {data,isLoading,fetchData} = useTournamentStore()
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
+  const {data,isLoading} = useTournamentStore()
 
   return{
     isLoading,

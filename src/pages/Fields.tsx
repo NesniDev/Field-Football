@@ -8,8 +8,8 @@ import { useState } from "react";
 
 const RESULT_PER_PAGE = 5
 export const Fields = () => {
-    
-    const {setQuery, clean,handleSubmit,results,query, isLoading} = useFields()
+  
+    const {setQuery, clean,handleSubmit,query, results, isLoading} = useFields()
 
     const [currentPage, setCurrentPage] = useState<number>(1)
 
