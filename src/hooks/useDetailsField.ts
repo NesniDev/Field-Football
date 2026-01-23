@@ -1,8 +1,7 @@
-import { fields } from "@/lib/fields"
 import type { InfoField } from "@/models/types"
 import { reservationSchema } from "@/schemas/reservations"
 import { useReservationStore } from "@/store/useReservationStore"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
 export const useDetailsField = () => {
@@ -11,12 +10,23 @@ export const useDetailsField = () => {
   const navigate = useNavigate()
   
   const [date, setDate] = useState<Date>(new Date())
+  const [info, setInfo] = useState<InfoField | null>(null)
   const [time, setTime] = useState<string>('')
   const [activeTab, setActiveTab] = useState<'description' | 'services' | 'ubication'>('description')
 
   const { slug } = useParams()
 
-  const info = fields.find(item => item.slug === slug)
+  useEffect(() => {
+    const fetchField = async () => {
+      const response = await fetch(`http://backend-eight-rose-88.vercel.app/fields/${slug}`)
+      const data = await response.json()
+
+      const queryField = data.find((item: InfoField) => item.slug === slug)
+      if(!queryField) return
+      setInfo(queryField)
+    }
+    fetchField()
+  }, [slug])
 
   const normalizeDate = (d: Date) => {
     const date = new Date(d)

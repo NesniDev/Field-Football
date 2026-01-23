@@ -1,3 +1,4 @@
+import useFieldsFetchStore from "@/store/useFieldsFetch.store";
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
@@ -20,41 +21,35 @@ interface FieldItem {
 }
 
 export const useFields = () => {
+  const {data, isLoading, error, fetchData } = useFieldsFetchStore()
+  
   const [query, setQuery] = useState<string>('')
-  const [fieldData, setFieldData] = useState<FieldItem[]>([])
-  const [loading, setLoading] = useState(true)  
-  const navigate = useNavigate()
-    const location = useLocation()
+
+  const navigateTo = useNavigate()
+
+  const location = useLocation()
 
   
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             if(!query.trim()) return // evita consulats vacias
-            navigate(`/fields?q=${query}`)
+            navigateTo(`/fields?q=${query}`)
         }
     
     const clean = () => {
         setQuery('')
-        navigate('/fields')
+        navigateTo('/fields')
     }
 
     useEffect(()=>{
-      async function fetchField(){
-        const response = await fetch('https://backend-eight-rose-88.vercel.app/fields')
-        const data = await response.json()
-        
-        setFieldData(data)
-        setLoading(false)
-      }
-
-      fetchField()
-    }, [])
+      fetchData()
+    }, [fetchData])
 
     const params = new URLSearchParams(location.search)
 
     const queryParams = params.get('q') || ""
     
-    const results:FieldItem[] = fieldData.filter((item: FieldItem) =>
+    const results = data.filter((item: FieldItem) =>
     item.title.toLowerCase().includes(queryParams.toLowerCase())
     );
 
@@ -62,8 +57,9 @@ export const useFields = () => {
     return {
       results,
       query,
-      fieldData,
-      loading,
+      data,
+      isLoading,
+      error,
       setQuery,
       handleSubmit,
       clean

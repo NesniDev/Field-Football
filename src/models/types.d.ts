@@ -1,4 +1,5 @@
 export interface InfoField {
+    id:              number;
     image:           string;
     title:           string;
     slug:            string;

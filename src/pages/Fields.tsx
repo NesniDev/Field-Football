@@ -6,11 +6,10 @@ import { useFields } from "@/hooks/useFields";
 import { Pagination } from "@/components/common/Pagination";
 import { useState } from "react";
 
-
 const RESULT_PER_PAGE = 5
 export const Fields = () => {
     
-    const {setQuery, clean,handleSubmit,results,query,loading} = useFields()
+    const {setQuery, clean,handleSubmit,results,query, isLoading} = useFields()
 
     const [currentPage, setCurrentPage] = useState<number>(1)
 
@@ -34,7 +33,7 @@ export const Fields = () => {
                     }
                 </form>
                 <section className="flex flex-wrap items-center justify-center gap-4 my-8 font-orbitron">
-                  {loading ? (
+                  {isLoading ? (
                     <div className="flex-col gap-4 w-full flex items-center justify-center">
                       <div className="w-20 h-20 border-4 border-transparent text-green-400 text-4xl animate-spin flex items-center justify-center border-t-green-400 rounded-full">
                         <div className="w-16 h-16 border-4 border-transparent text-green-700 text-2xl animate-spin flex items-center justify-center border-t-green-700 rounded-full"></div>
@@ -59,7 +58,7 @@ export const Fields = () => {
                       )
                     )}
                 </section>
-            { !loading && <Pagination onPageChange={handleOnPageChange} currentPage={currentPage} totalPages={totalPages}/>}
+            { !isLoading && <Pagination onPageChange={handleOnPageChange} currentPage={currentPage} totalPages={totalPages}/>}
             </div>
         </>
     )
