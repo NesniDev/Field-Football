@@ -18,12 +18,14 @@ export const useDetailsField = () => {
 
   useEffect(() => {
     const fetchField = async () => {
-      const response = await fetch(`http://backend-eight-rose-88.vercel.app/fields/${slug}`)
-      const data = await response.json()
+      const response = await fetch(`https://backend-eight-rose-88.vercel.app/fields/${slug}`)
+      if (!response.ok) throw new Error('Error al obtener el detalle')
 
-      const queryField = data.find((item: InfoField) => item.slug === slug)
-      if(!queryField) return
-      setInfo(queryField)
+      const data: InfoField = await response.json()
+
+      // const queryField = data.find((item: InfoField) => item.slug === slug)
+      // if(!queryField) return
+      setInfo(data)
     }
     fetchField()
   }, [slug])

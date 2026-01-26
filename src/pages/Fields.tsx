@@ -43,7 +43,7 @@ export const Fields = () => {
                     
                       pagesResults.length > 0 ? pagesResults.map((field, index) => (
 
-                        <NavLink to={`/field/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
+                        <NavLink to={`/fields/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
                           <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>
                           <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
                           <div>

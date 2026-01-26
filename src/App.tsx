@@ -68,7 +68,7 @@ const AppRoutes = () => {
       element: <NotFound />
     },
     {
-      path: '/field/:slug',
+      path: '/fields/:slug',
       element: <DetailsField />
     }
     
