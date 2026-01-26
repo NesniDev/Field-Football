@@ -10,11 +10,9 @@ export class FieldController {
   }
 
   static async getId(req, res) {
-    const { id } = req.params
+    const { slug } = req.params
 
-    const numberId = Number(id)
-
-    const field = await FieldModel.getId(numberId)
+    const field = await FieldModel.getId(slug)
 
     if (!field) {
       return res.status(404).json({ error: 'Field not found' })

@@ -4,4 +4,4 @@ import { FieldController } from '../controllers/field.js'
 export const fieldsRouter = Router()
 
 fieldsRouter.get('/', FieldController.getAll)
-fieldsRouter.get('/:id', FieldController.getId)
+fieldsRouter.get('/:slug', FieldController.getId)

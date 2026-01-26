@@ -20,8 +20,8 @@ export class FieldModel {
 
     return filteredFields
   }
-  static async getId(id) {
-    const field = fields.find((item) => item.id === id)
+  static async getId(slug) {
+    const field = fields.find((item) => item.slug === slug)
 
     return field
   }
