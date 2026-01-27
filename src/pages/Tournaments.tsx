@@ -3,6 +3,7 @@ import type { Tournament } from '@/models/tournament'
 import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 import { Pagination } from '@/components/common/Pagination'
 import { CardTournaments } from '@/components/Cards/CardTournaments'
+import { BreadCrumb } from '@/components/Custom/BreadCrumb'
 
 const RESULT_PER_PAGE = 3
 
@@ -40,7 +41,9 @@ export const Tournaments = () => {
 
   return (
     <section className="max-w-5xl mx-auto mt-5">
-      <h1 className="my-7 text-3xl font-bold">Explora Nuestros Torneos</h1>
+
+      <BreadCrumb currentPage='Torneos' />
+      <h1 className="my-7 text-3xl font-bold text-center">Explora Nuestros Torneos</h1>
 
       {isLoading ? (
         <div className="flex-col gap-4 w-full flex items-center justify-center">

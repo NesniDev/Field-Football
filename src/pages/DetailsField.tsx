@@ -1,6 +1,7 @@
 import { Calendar } from '@/components/ui/calendar'
 import { horarios } from '@/lib/horarios'
 import { useDetailsField } from '@/hooks/useDetailsField.ts'
+import { BreadCrumb } from '@/components/Custom/BreadCrumb'
 
 export const DetailsField = () => {
 
@@ -9,9 +10,13 @@ export const DetailsField = () => {
   if(!info) return
 
   return (
-    <>
-      <main className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10 mt-5'>
-        
+    <main className='max-w-5xl mx-auto my-5'>
+    <div>
+        <BreadCrumb currentPage={`Detalle - ${info.title}`} breadCrumb={[
+          {label: 'Fields', to: '/Fields'}
+        ]}/>
+    </div>
+      <section className='flex flex-col md:flex-row justify-between gap-10 mt-5'>
         <section className='flex flex-col gap-2 w-full'>
           <img src={info.image} alt={info.title} className='h-[430px] w-full object-cover rounded-xl' />
           <div className='flex flex-col gap-1 my-5 font-orbitron'>
@@ -91,7 +96,7 @@ export const DetailsField = () => {
             
             <button className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0,0,0,0) < new Date().setHours(0,0,0,0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`} onClick={() => handleReserve(info)}>Reservar</button>
         </aside>
-      </main>
-    </>
+      </section>
+    </main>
   )
 }
