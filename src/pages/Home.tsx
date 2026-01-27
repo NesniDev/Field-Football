@@ -1,5 +1,6 @@
 import { Experience } from "@/components/Home/Experience"
 import { Field } from "@/components/Home/Field"
+import { OfferCard } from "@/components/Home/OfferCard"
 import { HomeTournament } from "@/components/Home/Tournament"
 export const Home = () => {
   return (
@@ -7,6 +8,7 @@ export const Home = () => {
       <Experience />
       <Field />
       <HomeTournament />
+      <OfferCard/>
     </div>
   )
 }
