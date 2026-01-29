@@ -1,8 +1,12 @@
+import { getByFieldSlug } from "@/actions/get-slug"
 import type { Field } from "@/models/types"
 import { reservationSchema } from "@/schemas/reservations"
 import { useReservationStore } from "@/store/useReservationStore"
+import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, useSearchParams } from "react-router-dom"
+
+const tabs = ['description', 'services', 'location']
 
 export const useDetailsField = () => {
   const { setSelectedField, setStartTime, setReservationDate, setPrice } = useReservationStore()
@@ -10,25 +14,31 @@ export const useDetailsField = () => {
   const navigate = useNavigate()
   
   const [date, setDate] = useState<Date>(new Date())
-  const [info, setInfo] = useState<Field | null>(null)
   const [time, setTime] = useState<string>('')
-  const [activeTab, setActiveTab] = useState<'description' | 'services' | 'ubication'>('description')
 
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const tab = searchParams.get('tab') ?? 'description'
+  
+  useEffect(()=>{
+    if(!tabs.includes(tab)){
+      setSearchParams(prev => {
+        prev.set('tab', 'description')
+        return prev
+      })
+    }
+  }, [setSearchParams, tab])
+  
   const { slug } = useParams()
 
-  useEffect(() => {
-    const fetchField = async () => {
-      const response = await fetch(`https://backend-eight-rose-88.vercel.app/fields/${slug}`)
-      if (!response.ok) throw new Error('Error al obtener el detalle')
+  const normalizedSlug = slug ?? ''
 
-      const data: Field = await response.json()
-
-      // const queryField = data.find((item: InfoField) => item.slug === slug)
-      // if(!queryField) return
-      setInfo(data)
-    }
-    fetchField()
-  }, [slug])
+  const {data: info, isLoading} = useQuery<Field>({
+    queryKey: ['fieldSlug', slug],
+    queryFn: () => getByFieldSlug(normalizedSlug!),
+    staleTime: 1000 * 60 * 5,
+    enabled: !!slug
+  })
 
   const normalizeDate = (d: Date) => {
     const date = new Date(d)
@@ -48,8 +58,6 @@ export const useDetailsField = () => {
     time
   })
 
-  // const hoursIncluse = horarios.includes(time)
-
   if (!validation.success) return
 
   setSelectedField(field)
@@ -63,15 +71,14 @@ export const useDetailsField = () => {
 return {
   date,
   time,
-  activeTab,
   info,
   isFutureDate,
-
+  tab,
+  isLoading,
   handleReserve,
   setDate,
   setTime,
-  setActiveTab
-
+  setSearchParams
 }
 
 }
