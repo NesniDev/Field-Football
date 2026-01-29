@@ -2,22 +2,9 @@ import { TournamentModel } from '../models/tournament.js'
 
 export class TournamentController {
   static async getAll(req, res) {
-    const {
-      availability,
-      genre,
-      title,
-      city,
-      place,
-      limit = 10,
-      offset = 0
-    } = req.query
+    const { limit = 10, offset = 0 } = req.query
 
     const tournaments = await TournamentModel.getAll({
-      availability,
-      genre,
-      title,
-      city,
-      place,
       limit,
       offset
     })
