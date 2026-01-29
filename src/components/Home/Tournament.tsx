@@ -3,7 +3,9 @@ import type { Tournament } from '@/models/tournament'
 import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 
 export const HomeTournament = () => {
-  const {data} = useFetchApiTournaments()
+  const {data: infoData} = useFetchApiTournaments()
+
+  const data = infoData?.data ?? []
   return (
     <section className="my-20">
       <h2 className="text-5xl font-bold capitalize text-center mb-6">
@@ -13,7 +15,7 @@ export const HomeTournament = () => {
         Compite y demuestra quién es el mejor en la cancha.
       </p>
       <div className="flex flex-wrap items-center justify-center gap-4 place-self-center mt-5">
-        {data?.data.slice(0, 2).map((tournament: Tournament) => (
+        {data.slice(0, 2).map((tournament: Tournament) => (
           <div
             key={tournament.id}
             className="flex flex-col justify-center items-end bg-white rounded-xl overflow-hidden transition w-[500px] h-full relative group cursor-pointer"

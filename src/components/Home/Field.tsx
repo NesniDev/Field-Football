@@ -5,7 +5,9 @@ import { useFields } from '@/hooks/useFields'
 
 export const FieldMain = () => {
 
-  const { data, isLoading} = useFields()
+  const { data: infoData, isLoading} = useFields()
+
+  const data = infoData?.data ?? []
 
   if (isLoading) return <p>Loading...</p>
 
@@ -15,7 +17,7 @@ export const FieldMain = () => {
         Canchas Destacadas
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        {data?.data.slice(0, 3).map((field: Field) => (
+        {data.slice(0, 3).map((field: Field) => (
           <FieldCard key={field.id} field={field} />
         ))}
       </div>

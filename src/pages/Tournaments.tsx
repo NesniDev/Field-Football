@@ -8,12 +8,13 @@ import { BreadCrumb } from '@/components/Custom/BreadCrumb'
 const MAXTOURNAMENT = 3
 
 export const Tournaments = () => {
-  const { data, isLoading, limit } = useFetchApiTournaments()
+  const { data: infoData, isLoading, limit } = useFetchApiTournaments()
   const [register, setRegister] = useState<string[]>([])
 
-  if(!data) return
+  const data = infoData?.data ?? []
+  const total = infoData?.total ?? 0
 
-  const totalPages = Math.ceil(data.total / limit)
+  const totalPages = Math.ceil(total / limit)
   // const pageResults = data.slice(
   //   (currentPage - 1) * RESULT_PER_PAGE,
   //   currentPage * RESULT_PER_PAGE
@@ -51,14 +52,14 @@ export const Tournaments = () => {
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5`}
         >
-          {data.total === 0 ? (
+          {total === 0 ? (
             <div>
               <p className="text-center mx-auto">
                 No hay torneos disponibles...
               </p>
             </div>
           ) : (
-            data?.data.map((tournament: Tournament) => {
+            data.map((tournament: Tournament) => {
               return (
                 <CardTournaments
                   key={tournament.id}
@@ -73,7 +74,7 @@ export const Tournaments = () => {
         </div>
       )}
 
-      {!isLoading && data.total > 0 && (
+      {!isLoading && (total) > 0 && (
         <Pagination
           totalPages={totalPages}
         />

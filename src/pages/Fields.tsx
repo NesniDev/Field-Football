@@ -8,11 +8,11 @@ import { BreadCrumb } from "@/components/Custom/BreadCrumb";
 
 export const Fields = () => {
   
-    const {setInputValue, clean,handleSubmit,inputValue, data, isLoading, limit} = useFields()
+    const {setInputValue, clean,handleSubmit,inputValue, data: infoData, isLoading, limit} = useFields()
 
-    if (!data) return
+    const data = infoData?.data ?? []
 
-    const pagesResults = Math.ceil(data.total / limit)
+    const pagesResults = Math.ceil((infoData?.total ?? 0) / limit)
 
     return (
         <>
@@ -35,7 +35,7 @@ export const Fields = () => {
                     </div>
                   ) : (
                     
-                      pagesResults > 0 ? data?.data.map((field, index) => (
+                      pagesResults > 0 ? data?.map((field, index) => (
 
                         <NavLink to={`/fields/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
                           <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>
