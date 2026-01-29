@@ -53,6 +53,7 @@ export const useFields = () => {
     searchField,
     inputValue,
     page,
+    setSearchParams,
     setInputValue,
     handleSubmit,
     clean,
