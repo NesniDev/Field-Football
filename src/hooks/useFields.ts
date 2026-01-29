@@ -1,48 +1,62 @@
-import useFieldsFetchStore from "@/store/useFieldsFetch.store";
-import { useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { getFieldsAPI } from "@/actions/get-field";
+import type { InfoField } from "@/models/types";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react"
+import { useNavigate, useSearchParams } from "react-router-dom"
 
 export const useFields = () => {
+  const [searchParams, setSearchParams] = useSearchParams()  
   
-  
-  const [query, setQuery] = useState<string>('')
-
   const navigateTo = useNavigate()
-
-  const location = useLocation()
-
   
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault()
-            if(!query.trim()) return // evita consulats vacias
-            navigateTo(`/fields?q=${query}`)
-        }
-    
-    const clean = () => {
-        setQuery('')
-        navigateTo('/fields')
-    }
+  const searchField = searchParams.get('search') ?? ''
+  const page = Number(searchParams.get('page')) || 1
+  const limit = Number(searchParams.get('limit')) || 5
+  
+  const [inputValue, setInputValue] = useState(searchField)
 
-    const params = new URLSearchParams(location.search)
+   useEffect(() => {
+    setInputValue(searchField)
+  }, [searchField])
+  
+  const {data, isLoading} = useQuery<InfoField>({
+    queryKey: ['fields', {page, searchField}],
+    queryFn: () => getFieldsAPI(+page, +limit, searchField),
+    staleTime: 1000 * 60 * 5
+  })
 
-    const queryParams = params.get('q') || ""
-    
-    const data = useFieldsFetchStore(state => state.data)
-    const results = data.filter(field => field.title.toLowerCase().includes(queryParams.toLowerCase()))
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if(!inputValue.trim()) return // evita consulats vacias
+    setSearchParams({
+      search: inputValue,
+      page: '1'
+    })
+  }
+  
+  const clean = () => {
+    setInputValue('')
+    navigateTo('/fields')
+  }
 
-    const isLoading = useFieldsFetchStore(state => state.isLoading)
-    const error = useFieldsFetchStore(state => state.error)
+  const changePage = (newPage: number) => {
+    setSearchParams({
+      search: searchField,
+      page: String(newPage)
+    })
+  }
 
-
-    return {
-      results,
-      query,
-      data,
-      isLoading,
-      error,
-      setQuery,
-      handleSubmit,
-      clean
-    }
+  return {
+    data,
+    limit,
+    isLoading,
+    searchField,
+    inputValue,
+    page,
+    setInputValue,
+    handleSubmit,
+    clean,
+    changePage
+  }
 }
 

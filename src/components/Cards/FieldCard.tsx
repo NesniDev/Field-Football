@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
-import type { InfoField } from "../../models/types"
+import type { Field } from "../../models/types"
 
 interface Props {
-    field: InfoField
+    field: Field
 }
 
 export const FieldCard = ({field}: Props) => {

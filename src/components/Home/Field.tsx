@@ -1,19 +1,13 @@
-import useFieldsFetchStore from '@/store/useFieldsFetch.store'
-import { useEffect } from 'react'
 import { NavLink} from 'react-router-dom'
 import { FieldCard } from '../Cards/FieldCard'
-import type { InfoField } from '@/models/types'
+import type { Field } from '@/models/types'
+import { useFields } from '@/hooks/useFields'
 
-export const Field = () => {
+export const FieldMain = () => {
 
-  const { data, isLoading, error, fetchData } = useFieldsFetchStore()
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
+  const { data, isLoading} = useFields()
 
   if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
 
   return (
     <section className="my-20">
@@ -21,7 +15,7 @@ export const Field = () => {
         Canchas Destacadas
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        {data.slice(0, 3).map((field: InfoField) => (
+        {data?.data.slice(0, 3).map((field: Field) => (
           <FieldCard key={field.id} field={field} />
         ))}
       </div>
