@@ -1,7 +1,7 @@
 import { Header } from '@/components/common/Header'
 import { Hero } from '@/components/Home/Hero'
 import { ScrollToTop } from '@/utils/Scroll'
-import { Footer } from 'react-day-picker'
+import { Footer } from '@/components/common/Footer'
 import { Outlet, useLocation } from 'react-router'
 
 export const LayoutIndex = () => {
