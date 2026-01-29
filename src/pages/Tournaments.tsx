@@ -5,28 +5,24 @@ import { Pagination } from '@/components/common/Pagination'
 import { CardTournaments } from '@/components/Cards/CardTournaments'
 import { BreadCrumb } from '@/components/Custom/BreadCrumb'
 
-const RESULT_PER_PAGE = 3
+const MAXTOURNAMENT = 3
 
 export const Tournaments = () => {
-  const { data, isLoading } = useFetchApiTournaments()
-  const [currentPage, setCurrentPage] = useState(1)
+  const { data, isLoading, limit } = useFetchApiTournaments()
   const [register, setRegister] = useState<string[]>([])
-  const MAX = 3
 
-  const totalPages = Math.ceil(data.length / RESULT_PER_PAGE)
-  const pageResults = data.slice(
-    (currentPage - 1) * RESULT_PER_PAGE,
-    currentPage * RESULT_PER_PAGE
-  )
+  if(!data) return
 
-  const handleOnPageChange = (page: number) => {
-    setCurrentPage(page)
-  }
+  const totalPages = Math.ceil(data.total / limit)
+  // const pageResults = data.slice(
+  //   (currentPage - 1) * RESULT_PER_PAGE,
+  //   currentPage * RESULT_PER_PAGE
+  // )
 
   const handleRegister = (title: string) => {
     if (register.includes(title)) return
 
-    if (register.length >= MAX) {
+    if (register.length >= MAXTOURNAMENT) {
       alert('Ya has inscrito el máximo de torneos')
       return
     }
@@ -55,14 +51,14 @@ export const Tournaments = () => {
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-self-center mb-10 gap-5`}
         >
-          {data.length === 0 ? (
+          {data.total === 0 ? (
             <div>
               <p className="text-center mx-auto">
                 No hay torneos disponibles...
               </p>
             </div>
           ) : (
-            pageResults.map((tournament: Tournament) => {
+            data?.data.map((tournament: Tournament) => {
               return (
                 <CardTournaments
                   key={tournament.id}
@@ -77,11 +73,9 @@ export const Tournaments = () => {
         </div>
       )}
 
-      {!isLoading && data.length > 0 && (
+      {!isLoading && data.total > 0 && (
         <Pagination
-          currentPage={currentPage}
           totalPages={totalPages}
-          onPageChange={handleOnPageChange}
         />
       )}
     </section>

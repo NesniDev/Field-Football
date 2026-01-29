@@ -2,9 +2,9 @@ import { FieldModel } from '../models/field.js'
 
 export class FieldController {
   static async getAll(req, res) {
-    const { text, limit = 10, offset = 0 } = req.query
+    const { search = '', limit = 5, offset = 0 } = req.query
 
-    const fields = await FieldModel.getAll({ text, limit, offset })
+    const fields = await FieldModel.getAll({ search, limit, offset })
 
     return res.json(fields)
   }

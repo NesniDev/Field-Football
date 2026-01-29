@@ -1,7 +1,7 @@
 import fields from '../fields.json' with { type: 'json' }
 
 export class FieldModel {
-  static async getAll({ text, limit, offset }) {
+  static async getAll({ text = '', limit, offset }) {
     let filteredFields = fields
 
     if (text) {
@@ -18,7 +18,10 @@ export class FieldModel {
       numberOffset + numberLimit
     )
 
-    return filteredFields
+    return {
+      total: filteredFields.length,
+      data: paginatedFields
+    }
   }
   static async getId(slug) {
     const field = fields.find((item) => item.slug === slug)
