@@ -1,3 +1,8 @@
+export interface TournamentResponse {
+    total: number,
+    data: Tournament[]
+}
+
 export interface Tournament {
     id: string;
     title: string;

@@ -1,15 +1,15 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { InfoField } from '../models/types'
+import type { Field } from '../models/types'
 
 interface ReservationStore {
-  selectedField: InfoField | null;  // Puede ser una cancha (InfoField) o null
+  selectedField: Field | null;  // Puede ser una cancha (Field) o null
   reservationDate: Date | null;
   startTime: string | null;
   endTime: string | null;
   price: string | null;
 
-  setSelectedField: (field: InfoField) => void;
+  setSelectedField: (field: Field) => void;
   setReservationDate: (date: Date) => void;
   setStartTime: (time: string) => void;
   setEndTime: (time: string) => void;

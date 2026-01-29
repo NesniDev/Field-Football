@@ -1,4 +1,4 @@
-import type { InfoField } from "@/models/types"
+import type { Field } from "@/models/types"
 import { reservationSchema } from "@/schemas/reservations"
 import { useReservationStore } from "@/store/useReservationStore"
 import { useEffect, useState } from "react"
@@ -10,7 +10,7 @@ export const useDetailsField = () => {
   const navigate = useNavigate()
   
   const [date, setDate] = useState<Date>(new Date())
-  const [info, setInfo] = useState<InfoField | null>(null)
+  const [info, setInfo] = useState<Field | null>(null)
   const [time, setTime] = useState<string>('')
   const [activeTab, setActiveTab] = useState<'description' | 'services' | 'ubication'>('description')
 
@@ -21,7 +21,7 @@ export const useDetailsField = () => {
       const response = await fetch(`https://backend-eight-rose-88.vercel.app/fields/${slug}`)
       if (!response.ok) throw new Error('Error al obtener el detalle')
 
-      const data: InfoField = await response.json()
+      const data: Field = await response.json()
 
       // const queryField = data.find((item: InfoField) => item.slug === slug)
       // if(!queryField) return
@@ -41,7 +41,7 @@ export const useDetailsField = () => {
 
   const isFutureDate = selectedDate.getTime() >= today.getTime()
 
-  const handleReserve = (field: InfoField) => {
+  const handleReserve = (field: Field) => {
   const validation = reservationSchema.safeParse({
     selectedField: field,
     date,
