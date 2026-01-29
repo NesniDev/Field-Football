@@ -1,37 +1,25 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 interface Props {
-  currentPage: number 
-  totalPages: number
-  onPageChange: (page: number) => void
-
+  totalPages: number 
 }
 
-export const Pagination = ({currentPage = 1, totalPages = 5, onPageChange}:Props) => {
+export const Pagination = ({ totalPages = 5}:Props) => {
 
-  const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  const isFirstPage = currentPage === 1
-  const isLastPage = currentPage === totalPages
+  const queryPage = searchParams.get('page') ?? '1'
 
-  const handlePreviousPage = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    if (!isFirstPage) {
-      onPageChange(currentPage - 1)
-    }
-  }
+  const page = isNaN(+queryPage) ? 1 : +queryPage
 
-  const handleNextPage = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    if (!isLastPage) {
-      onPageChange(currentPage + 1)
-    }
-  }
+  const handleChangePage = (page: number) => {
+    if(page < 1 || page > totalPages) return
 
-  const handleChangePage = (e: React.MouseEvent<HTMLAnchorElement>, page: number) => {
-    e.preventDefault()
-    if (page !== currentPage) {
-      onPageChange(page)
-    }
+    setSearchParams((prev) => {
+      prev.set('page', page.toString())
+      return prev
+    })
+    
   }
 
     return (
@@ -40,18 +28,18 @@ export const Pagination = ({currentPage = 1, totalPages = 5, onPageChange}:Props
             <ul className="flex gap-3 py-5 text-lg items-center justify-center">
               <li>
                
-                    <a href="#" onClick={handlePreviousPage} className={`${isFirstPage ? 'pointer-events-none opacity-20' : ''}`}><ChevronLeft /></a>
+                    <button onClick={()=>handleChangePage(page -1)} className={`${page === 1 ? 'pointer-events-none opacity-20' : ''}`}><ChevronLeft /></button>
                   
                 </li>
               {
-                pages.map((page) => (
-                  <li key={page}>
-                    <a href="#" onClick={(e) => handleChangePage(e, page)} className={`${currentPage === page ? 'is-active' : 'hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white '} transition duration-300 px-5 py-3 rounded-2xl cursor-pointer`}>{page}</a>
+                Array.from({length: totalPages}).map((_, index) => (
+                  <li key={index}>
+                    <button onClick={()=>handleChangePage(index + 1)} className={`${page === index + 1 ? 'is-active' : 'hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white '} transition duration-300 px-5 py-3 rounded-2xl cursor-pointer`}>{index + 1}</button>
                   </li>
                 ))
               }
               <li>
-                <a href="#" onClick={handleNextPage} className={`${isLastPage ? 'pointer-events-none opacity-20' : ''}`}><ChevronRight /></a>
+                <button onClick={()=>handleChangePage(page + 1)} className={`${page === totalPages ? 'pointer-events-none opacity-20' : ''}`}><ChevronRight /></button>
                 </li>
             </ul> 
           </nav>
