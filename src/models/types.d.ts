@@ -1,5 +1,9 @@
-export interface InfoField {
-    id:              number;
+export interface InfoField{
+    total: number
+    data: Field[]
+}
+export interface Field {
+    id:              string;
     image:           string;
     title:           string;
     slug:            string;
