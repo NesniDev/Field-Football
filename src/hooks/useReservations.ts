@@ -1,13 +1,9 @@
-import useFieldsFetchStore from "@/store/useFieldsFetch.store"
 import { useReservationStore } from "@/store/useReservationStore"
 
 
 
 export const useReservations = () => {
   const {selectedField, reservationDate, startTime, price} = useReservationStore()
-
-  const {data: fields} = useFieldsFetchStore()
-    const info = fields.find(item => item.slug === selectedField?.slug)
 
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
@@ -23,6 +19,5 @@ export const useReservations = () => {
       fieldName,
       fieldImage,
       formattedDate,
-      info
     }
 }
