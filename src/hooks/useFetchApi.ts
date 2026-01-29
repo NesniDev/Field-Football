@@ -21,6 +21,7 @@ export const useFetchApiTournaments = () => {
     isLoading,
     data,
     page,
-    limit    
+    limit,
+    setSearchParams    
   }
 }
