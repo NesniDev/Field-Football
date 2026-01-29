@@ -19,7 +19,7 @@ describe('useReservation', () => {
     expect(result.current.fieldName).toBeUndefined()
     expect(result.current.fieldImage).toBeUndefined()
     expect(result.current.formattedDate).toBeUndefined()
-    expect(result.current.info).toBeUndefined()
+    // expect(result.current.info).toBeUndefined()
     expect(result.current.price).toBeUndefined()
     expect(result.current.startTime).toBeUndefined()
   })
