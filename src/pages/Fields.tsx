@@ -1,10 +1,10 @@
 
-import { NavLink} from "react-router-dom"
 import { TbSoccerField  } from "react-icons/tb";
 import { IoMdCloseCircle   } from "react-icons/io";
 import { useFields } from "@/hooks/useFields";
 import { Pagination } from "@/components/common/Pagination";
 import { BreadCrumb } from "@/components/Custom/BreadCrumb";
+import { FieldCard } from "@/components/Cards/FieldCard";
 
 export const Fields = () => {
   
@@ -36,17 +36,7 @@ export const Fields = () => {
                   ) : (
                     
                       pagesResults > 0 ? data?.map((field, index) => (
-
-                        <NavLink to={`/fields/${field.slug}`} key={index} className="flex flex-col items-center gap-2 rounded-lg overflow-hidden relative group hover:-translate-y-1 transition duration-800">
-                          <img src={field.image} alt={field.title} className="w-80 h-96 object-cover group-hover:scale-110 transition duration-800"/>
-                          <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
-                          <div>
-                          <div className="absolute bottom-4 left-4 ">
-                              <h2 className="text-xl font-semibold text-white">{field.title}</h2>
-                              <p className="text-xs text-gray-200/60">{field.address}</p>
-                          </div>
-                          </div>
-                        </NavLink>
+                        <FieldCard key={index} field={field}/>
                       )) : (
                         <p className="text-center text-gray-600 font-semibold text-lg mt-8 ">No se encontraron resultados</p>
                       )
