@@ -7,13 +7,13 @@ interface ReservationStore {
   reservationDate: Date | null;
   startTime: string | null;
   endTime: string | null;
-  price: string | null;
+  price: number | null;
 
   setSelectedField: (field: Field) => void;
   setReservationDate: (date: Date) => void;
   setStartTime: (time: string) => void;
   setEndTime: (time: string) => void;
-  setPrice: (price: string) => void;
+  setPrice: (price: number) => void;
   clearReservation: () => void;
 }
 
