@@ -9,8 +9,11 @@
       "city": "Chiquinquirá",
       "address": "Camelot"
     },
-    "date": "15 Jul - 25 Jul",
-    "income": "300.000"
+    "date": "15 Enero 2026",
+    "startTime": "08:00",
+    "type": "Fútbol 8",
+    "income": 200000,
+    "awardWinner": 1000000
   },
   {
     "id": "2",
@@ -22,8 +25,11 @@
       "city": "Chiquinquirá",
       "address": "La Fiera"
     },
-    "date": "10 Nov - 25 Nov",
-    "income": "300.000"
+    "date": "20 Febrero 2026",
+    "startTime": "19:00",
+    "type": "Fútbol 7",
+    "income": 350000,
+    "awardWinner": 2000000
   },
   {
     "id": "3",
@@ -35,8 +41,11 @@
       "city": "Chiquinquirá",
       "address": "El Barcelona"
     },
-    "date": "10 Dic - 10 Dic",
-    "income": "350.000"
+    "date": "05 Marzo 2026",
+    "startTime": "10:00",
+    "type": "Fútbol 3",
+    "income": 100000,
+    "awardWinner": 5000000
   },
   {
     "id": "4",
@@ -48,8 +57,11 @@
       "city": "Tunja",
       "address": "Estadio La Independencia"
     },
-    "date": "5 Ene - 15 Ene",
-    "income": "400.000"
+    "date": "12 Abril 2026",
+    "startTime": "15:00",
+    "type": "Fútbol 11",
+    "income": 500000,
+    "awardWinner": 3000000
   },
   {
     "id": "5",
@@ -61,8 +73,11 @@
       "city": "Duitama",
       "address": "Estadio Bicentenario"
     },
-    "date": "1 Feb - 28 Feb",
-    "income": "350.000"
+    "date": "18 Mayo 2026",
+    "startTime": "14:00",
+    "type": "Fútbol 5",
+    "income": 250000,
+    "awardWinner": 1500000
   },
   {
     "id": "6",
@@ -74,8 +89,11 @@
       "city": "Sogamoso",
       "address": "Estadio Luis Antonio Duque"
     },
-    "date": "15 Mar - 30 Mar",
-    "income": "320.000"
+    "date": "22 Junio 2026",
+    "startTime": "18:30",
+    "type": "Fútbol 7",
+    "income": 300000,
+    "awardWinner": 1800000
   },
   {
     "id": "7",
@@ -87,8 +105,11 @@
       "city": "Paipa",
       "address": "Estadio Municipal"
     },
-    "date": "10 Abr - 25 Abr",
-    "income": "380.000"
+    "date": "10 Julio 2026",
+    "startTime": "20:00",
+    "type": "Fútbol 8",
+    "income": 400000,
+    "awardWinner": 2500000
   },
   {
     "id": "8",
@@ -100,8 +121,11 @@
       "city": "Tibasosa",
       "address": "Canchas Sintéticas"
     },
-    "date": "1 May - 15 May",
-    "income": "300.000"
+    "date": "14 Agosto 2026",
+    "startTime": "09:30",
+    "type": "Fútbol 3",
+    "income": 220000,
+    "awardWinner": 1200000
   },
   {
     "id": "9",
@@ -113,8 +137,11 @@
       "city": "Nobsa",
       "address": "Polideportivo Municipal"
     },
-    "date": "5 Jun - 20 Jun",
-    "income": "280.000"
+    "date": "09 Septiembre 2026",
+    "startTime": "11:00",
+    "type": "Fútbol 11",
+    "income": 180000,
+    "awardWinner": 9000000
   },
   {
     "id": "10",
@@ -126,8 +153,11 @@
       "city": "Sogamoso",
       "address": "Canchas El Campín"
     },
-    "date": "15 Ago - 30 Ago",
-    "income": "320.000"
+    "date": "30 Octubre 2026",
+    "startTime": "16:00",
+    "type": "Fútbol 5",
+    "income": 320000,
+    "awardWinner": 1600000
   },
   {
     "id": "11",
@@ -139,8 +169,11 @@
       "city": "Tunja",
       "address": "Canchas La Glorieta"
     },
-    "date": "10 Sep - 25 Sep",
-    "income": "350.000"
+    "date": "15 Noviembre 2026",
+    "startTime": "13:00",
+    "type": "Fútbol 8",
+    "income": 280000,
+    "awardWinner": 1400000
   },
   {
     "id": "12",
@@ -152,8 +185,11 @@
       "city": "Duitama",
       "address": "Canchas El Salitre"
     },
-    "date": "1 Dic - 15 Dic",
-    "income": "400.000"
+    "date": "05 Diciembre 2026",
+    "startTime": "17:00",
+    "type": "Fútbol 7",
+    "income": 450000,
+    "awardWinner": 2200000
   },
   {
     "id": "13",
@@ -165,7 +201,10 @@
       "city": "Chiquinquirá",
       "address": "Polideportivo"
     },
-    "date": "15 Dic - 30 Dic",
-    "income": "450.000"
+    "date": "20 Diciembre 2026",
+    "startTime": "18:00",
+    "type": "Fútbol 11",
+    "income": 380000,
+    "awardWinner": 1900000
   }
 ]
