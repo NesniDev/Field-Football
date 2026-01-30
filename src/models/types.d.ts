@@ -11,8 +11,8 @@ export interface Field {
     description:     string;
     characteristics: Characteristics;
     services:        string[];
-    punctuation:     string;
-    price:           string;
+    punctuation:     number;
+    price:           number;
     ubication:       string;
 }
 

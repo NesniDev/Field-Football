@@ -21,8 +21,8 @@
     "Área de descanso con sillas y mesas",
     "Servicio de árbitros certificados"
   ],
-  "punctuation": "5.0",
-  "price": "60.000",
+  "punctuation": 5,
+  "price": 60000,
   "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
 },
 {
@@ -47,8 +47,8 @@
     "Área de calentamiento",
     "Servicio de primeros auxilios"
   ],
-  "punctuation": "5.0",
-  "price": "60.000",
+  "punctuation": 5,
+  "price": 60000,
   "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
 },
 {
@@ -74,8 +74,8 @@
     "Sistema de riego automático",
     "Área VIP con vista privilegiada"
   ],
-  "punctuation": "5.0",
-  "price": "60.000",
+  "punctuation": 5,
+  "price": 60000,
   "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
 },
 {
@@ -101,8 +101,8 @@
     "Parrilla y zona de asados",
     "WiFi gratuito"
   ],
-  "punctuation": "5.0",
-  "price": "60.000",
+  "punctuation": 5,
+  "price": 60000,
   "ubication": "https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1764107977576!5m2!1ses!2sco!6m8!1m7!1sWrs31TH-FWsuFxrZkhWFlg!2m2!1d5.611430637915953!2d-73.82637712997028!3f284.23059112792185!4f-3.8193814948854197!5f0.7820865974627469"
 },
 {
@@ -127,8 +127,8 @@
     "Área de descanso con sillas y mesas",
     "Servicio de árbitros certificados"
   ],
-  "punctuation": "4.9",
-  "price": "65.000",
+  "punctuation": 4.9,
+  "price": 65000,
   "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789012"
 },
 {
@@ -153,8 +153,8 @@
     "Área de calentamiento",
     "Servicio de primeros auxilios"
   ],
-  "punctuation": "4.8",
-  "price": "70.000",
+  "punctuation": 4.8,
+  "price": 70000,
   "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789013"
 },
 {
@@ -179,8 +179,8 @@
     "Área de descanso con sillas",
     "Servicio de árbitros profesionales"
   ],
-  "punctuation": "4.9",
-  "price": "75.000",
+  "punctuation": 4.0,
+  "price": 75000,
   "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789014"
 },
 {
@@ -205,8 +205,8 @@
     "Servicio de fotografía deportiva",
     "Parrilla y zona de asados"
   ],
-  "punctuation": "4.7",
-  "price": "68.000",
+  "punctuation": 3.9,
+  "price": 68000,
   "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789015"
 },
 {
@@ -232,8 +232,8 @@
     "Sistema de riego automático",
     "Área VIP con vista privilegiada"
   ],
-  "punctuation": "5.0",
-  "price": "80.000",
+  "punctuation": 5,
+  "price": 80000,
   "ubication": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789016"
 },
 {
@@ -258,8 +258,8 @@
     "Área de descanso con sillas y mesas",
     "Servicio de árbitros profesionales"
   ],
-  "punctuation": "4.9",
-  "price": "78.000",
+  "punctuation": 4.9,
+  "price": 78000,
   "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789017"
 },
 {
@@ -284,8 +284,8 @@
     "Servicio de fotografía deportiva",
     "WiFi gratuito"
   ],
-  "punctuation": "4.8",
-  "price": "72.000",
+  "punctuation": 4.8,
+  "price": 72000,
   "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789018"
 },
 {
@@ -310,8 +310,8 @@
     "Estacionamiento vigilado",
     "Servicio de enfermería"
   ],
-  "punctuation": "5.0",
-  "price": "85.000",
+  "punctuation": 5,
+  "price": 85000,
   "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789019"
 },
 {
@@ -335,8 +335,8 @@
     "Área de espera con bancas",
     "Servicio de árbitros (bajo solicitud)"
   ],
-  "punctuation": "4.5",
-  "price": "55.000",
+  "punctuation": 4.5,
+  "price": 55000,
   "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789020"
 },
 {
@@ -361,8 +361,8 @@
     "Área de descanso",
     "Servicio de árbitros"
   ],
-  "punctuation": "4.6",
-  "price": "60.000",
+  "punctuation": 4.6,
+  "price": 60000,
   "ubication": "https://www.google.com/maps.com/embed?pb=!1m18!1m12!1m3!1d3976.7892!2d-74.055943!3d4.710988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDInMzkuNiJOIDc0wrAwMyczMy40Ilc!5e0!3m2!1ses!2sco!4v1623456789021"
 }
 ]
