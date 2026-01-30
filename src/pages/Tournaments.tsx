@@ -1,46 +1,27 @@
-import { useState } from 'react'
 import type { Tournament } from '@/models/tournament'
 import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 import { Pagination } from '@/components/common/Pagination'
 import { CardTournaments } from '@/components/Cards/CardTournaments'
 import { BreadCrumb } from '@/components/Custom/BreadCrumb'
 
-const MAXTOURNAMENT = 3
+
 
 export const Tournaments = () => {
   const { data: infoData, isLoading, limit } = useFetchApiTournaments()
-  const [register, setRegister] = useState<string[]>([])
-
+  
   const data = infoData?.data ?? []
   const total = infoData?.total ?? 0
-
+  
   const totalPages = Math.ceil(total / limit)
-  // const pageResults = data.slice(
-  //   (currentPage - 1) * RESULT_PER_PAGE,
-  //   currentPage * RESULT_PER_PAGE
-  // )
-
-  const handleRegister = (title: string) => {
-    if (register.includes(title)) return
-
-    if (register.length >= MAXTOURNAMENT) {
-      alert('Ya has inscrito el máximo de torneos')
-      return
-    }
-
-    setRegister((prev) => [...prev, title])
-  }
-
-  const handleUnRegister = (title: string) => {
-    const filteredItems = register.filter((item) => item !== title)
-    setRegister(filteredItems)
-  }
-
+  
   return (
     <section className="max-w-5xl mx-auto mt-5">
 
       <BreadCrumb currentPage='Torneos' />
-      <h1 className="my-7 text-3xl font-bold text-center">Explora Nuestros Torneos</h1>
+      <h1 className="my-4 text-3xl font-bold text-center">Explora Nuestros Torneos</h1>
+      <p className="text-center text-gray-500 mb-6 text-sm w-xl mx-auto">
+        Descubre los torneos activos, inscríbete con tu equipo y compite por grandes premios. ¡Demuestra tu talento en la cancha!
+      </p>
 
       {isLoading ? (
         <div className="flex-col gap-4 w-full flex items-center justify-center">
@@ -64,9 +45,6 @@ export const Tournaments = () => {
                 <CardTournaments
                   key={tournament.id}
                   tournament={tournament}
-                  isRegistered={register.includes(tournament.title)}
-                  onRegister={() => handleRegister(tournament.title)}
-                  onUnRegister={() => handleUnRegister(tournament.title)}
                 />
               )
             })

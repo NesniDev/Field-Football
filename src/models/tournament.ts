@@ -15,4 +15,7 @@ export interface Tournament {
         address: string;
     }
     income: string;
+    startTime: string;
+    awardWinner: string;
+    type: string;
 }
