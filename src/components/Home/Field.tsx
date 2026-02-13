@@ -12,14 +12,14 @@ export const FieldMain = () => {
   if (isLoading) return <p>Loading...</p>
 
   return (
-    <section className="my-20">
-      <h2 className="text-5xl font-bold capitalize text-center mb-6">
+    <section className="my-20 mx-5">
+      <h2 className="text-3xl md:text-5xl font-bold capitalize text-center mb-6">
         Canchas Destacadas
       </h2>
       <p className="text-center text-gray-600/70 mb-8 w-full max-w-2xl mx-auto">
         Encuentra las canchas mejor valoradas por nuestra comunidad y vive la pasión del fútbol en instalaciones de primera calidad.
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         {data.slice(0, 3).map((field: Field) => (
           <FieldCard key={field.id} field={field} />
         ))}

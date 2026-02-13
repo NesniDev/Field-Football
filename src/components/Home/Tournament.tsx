@@ -8,14 +8,14 @@ export const HomeTournament = () => {
 
   const data = infoData?.data ?? []
   return (
-    <section className="my-20">
-      <h2 className="text-5xl font-bold capitalize text-center mb-6">
+    <section className="my-20 mx-7">
+      <h2 className="text-4xl md:text-5xl font-bold capitalize text-center mb-6">
         Torneos Disponibles
       </h2>
       <p className="text-center text-gray-600/70">
         Compite y demuestra quién es el mejor en la cancha.
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-4 place-self-center mt-5">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-5">
         {data.slice(0, 2).map((tournament: Tournament) => (
           <CardTournaments key={tournament.id} tournament={tournament}  />
         ))}

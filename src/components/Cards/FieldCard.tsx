@@ -16,7 +16,7 @@ export const FieldCard = ({ field }: Props) => {
   return (
     <article
       key={field.id}
-      className="group flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-80 hover:-translate-1 duration-800"
+      className="group flex flex-col items-start bg-white rounded-xl overflow-hidden shadow-md shadow-emerald-200 transition w-80 hover:-translate-1 duration-800 font-orbitron"
     >
       <NavLink
         to={`/fields/${field.slug}`}
@@ -32,14 +32,14 @@ export const FieldCard = ({ field }: Props) => {
           <div className="absolute bottom-4 left-4 ">
             <div className="flex justify-evenly items-center ">
               <div>
-                <h2 className="text-xl font-semibold text-white">
+                <h2 className="text-xl font-semibold text-white ">
                   {field.title}
                 </h2>
                 <p className="text-xs text-gray-200/60">{field.address}</p>
               </div>
             </div>
           </div>
-          <div className="absolute right-4 bottom-4">
+          <div className="absolute right-4 bottom-9 md:right-4 md:bottom-4 ">
             <p className="text-xs text-white font-semibold">{handlePrice(field.price)}</p>
           </div>
           <span

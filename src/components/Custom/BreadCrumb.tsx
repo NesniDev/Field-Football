@@ -13,7 +13,7 @@ interface Props {
 
 export const BreadCrumb = ({currentPage, breadCrumb = []}:Props) => {
   return (
-    <nav className="flex my-4" aria-label="Breadcrumb">
+    <nav className="flex my-4 mx-5" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li className="inline-flex items-center">
           <NavLink to={'/'} className="inline-flex items-center text-sm font-medium text-gray-600/80 hover:text-green-800 transition">

@@ -22,8 +22,8 @@ export const Hero = () => {
     return (
         <section className="text-white" style={styles}>
             <Header color="white" />
-            <div className="flex flex-col justify-center gap-3 container max-w-3xl mx-auto h-full text-center font-orbitron">
-                <h1 className="text-5xl font-bold capitalize" >Tu próximo partido empieza aquí. Encuentra y reserva tu cancha ideal.</h1>
+            <div className="flex flex-col justify-center gap-3 px-5 md:px-0 container max-w-3xl mx-auto h-full text-center font-orbitron">
+                <h1 className="text-3xl px-3 md:text-5xl font-bold capitalize" >Tu próximo partido empieza aquí. Encuentra y reserva tu cancha ideal.</h1>
                 <p className="text-sm">Reserva tu cancha favorita.</p>
                 <form className="flex justify-center items-center gap-2 bg-emerald-50/30 rounded-xl px-2 py-1.5 focus-within:backdrop-blur-xs transition-all duration-300" onSubmit={handleSubmit}>
                     <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} name="field" type="text" className="w-full h-full outline-none rounded-lg px-3 py-2 bg-white text-gray-800 placeholder:text-gray-400 " placeholder="El Barcelona..." autoComplete="off"/>

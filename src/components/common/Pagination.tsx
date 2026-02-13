@@ -25,7 +25,7 @@ export const Pagination = ({ totalPages = 5}:Props) => {
     return (
         <>
           <nav className="flex justify-center my-7">
-            <ul className="flex gap-3 py-5 text-lg items-center justify-center">
+            <ul className="flex gap-1 py-5 text-xs md:text-lg items-center justify-center">
               <li>
                
                     <button onClick={()=>handleChangePage(page -1)} className={`${page === 1 ? 'pointer-events-none opacity-20' : ''}`}><ChevronLeft /></button>
@@ -34,7 +34,7 @@ export const Pagination = ({ totalPages = 5}:Props) => {
               {
                 Array.from({length: totalPages}).map((_, index) => (
                   <li key={index}>
-                    <button onClick={()=>handleChangePage(index + 1)} className={`${page === index + 1 ? 'is-active' : 'hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white '} transition duration-300 px-5 py-3 rounded-2xl cursor-pointer`}>{index + 1}</button>
+                    <button onClick={()=>handleChangePage(index + 1)} className={`${page === index + 1 ? 'is-active' : 'hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white '} transition duration-300 px-2 md:px-5 py-1 md:py-3 rounded-2xl cursor-pointer`}>{index + 1}</button>
                   </li>
                 ))
               }

@@ -62,7 +62,7 @@ export const CardTournaments = ({
   return (
     <>
       <article
-        className={`flex flex-col items-start bg-white rounded-3xl overflow-hidden shadow-md ${tournament.availability === 'Abierto' ? 'shadow-emerald-300' : tournament.availability === 'Últimos cupos' ? 'shadow-red-300' : tournament.availability === 'Finalizado' ? 'shadow-gray-300' : tournament.availability === 'Próximamente' ? 'shadow-yellow-300' : tournament.availability === 'Finalizado' ? 'shadow-gray-900' : ''} transition h-full w-80`}
+        className={`flex flex-col items-start bg-white rounded-3xl overflow-hidden shadow-md ${tournament.availability === 'Abierto' ? 'shadow-emerald-300' : tournament.availability === 'Últimos cupos' ? 'shadow-red-300' : tournament.availability === 'Finalizado' ? 'shadow-gray-300' : tournament.availability === 'Próximamente' ? 'shadow-yellow-300' : ''} transition size-full`}
       >
         <div
           className={`flex flex-col justify-center items-center gap-1 mx-auto py-2 size-full ${tournament.availability === 'Abierto' ? 'bg-btn-dark' : tournament.availability === 'Últimos cupos' ? 'bg-red-500' : tournament.availability === 'Finalizado' ? 'bg-gray-500' : tournament.availability === 'Próximamente' ? 'bg-yellow-500' : tournament.availability === 'Finalizado' ? 'bg-gray-500' : ''}`}
@@ -76,7 +76,7 @@ export const CardTournaments = ({
             src={tournament.image}
             alt={tournament.title}
             loading="lazy"
-            className="w-fit h-44 object-cover mx-auto my-4 rounded-2xl"
+            className="w-full md:w-fit mx-auto h-40 sm:h-48 object-cover my-4 rounded-2xl"
           />
           <div className="flex flex-col items-center gap-4 w-full px-3 flex-1">
             <div className="flex justify-between items-center gap-2 w-full mx-3 flex-1 ">
@@ -137,11 +137,11 @@ export const CardTournaments = ({
               </div>
             </div>
           </div>
-        <div className="flex items-center justify-between gap-3 px-2 py-2 mx-auto mb-2">
+<div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-2 py-2 mx-auto mb-2">
           <button
             onClick={() => handleRegister(tournament.title)}
             disabled={register.includes(tournament.title) || tournament.availability === 'Finalizado'}
-            className={` ${register.includes(tournament.title) || tournament.availability === 'Finalizado' ? 'cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark/80 hover:bg-btn-dark'} transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-4 py-3 text-sm rounded-lg font-medium font-orbitron`}
+            className={` ${register.includes(tournament.title) || tournament.availability === 'Finalizado' ? ' text-center cursor-not-allowed bg-gray-400/80 text-gray-200 select-none' : 'cursor-pointer bg-btn-dark/80 hover:bg-btn-dark'} transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark px-4 py-3 text-sm rounded-lg font-medium font-orbitron`}
           >
             {tournament.availability === 'Finalizado'
               ? 'Finalizado'
