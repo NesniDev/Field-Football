@@ -62,7 +62,7 @@ export const CardTournaments = ({
   return (
     <>
       <article
-        className={`flex flex-col items-start bg-white rounded-3xl overflow-hidden shadow-md ${tournament.availability === 'Abierto' ? 'shadow-emerald-300' : tournament.availability === 'Últimos cupos' ? 'shadow-red-300' : tournament.availability === 'Finalizado' ? 'shadow-gray-300' : tournament.availability === 'Próximamente' ? 'shadow-yellow-300' : ''} transition size-full`}
+        className={`flex flex-col items-start bg-white rounded-3xl overflow-hidden shadow-md ${tournament.availability === 'Abierto' ? 'shadow-emerald-300' : tournament.availability === 'Últimos cupos' ? 'shadow-red-300' : tournament.availability === 'Finalizado' ? 'shadow-gray-300' : tournament.availability === 'Próximamente' ? 'shadow-yellow-300' : ''} transition h-full`}
       >
         <div
           className={`flex flex-col justify-center items-center gap-1 mx-auto py-2 size-full ${tournament.availability === 'Abierto' ? 'bg-btn-dark' : tournament.availability === 'Últimos cupos' ? 'bg-red-500' : tournament.availability === 'Finalizado' ? 'bg-gray-500' : tournament.availability === 'Próximamente' ? 'bg-yellow-500' : tournament.availability === 'Finalizado' ? 'bg-gray-500' : ''}`}
