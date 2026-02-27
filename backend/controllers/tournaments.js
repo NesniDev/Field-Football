@@ -2,14 +2,24 @@ import { TournamentModel } from '../models/tournament.js'
 
 export class TournamentController {
   static async getAll(req, res) {
-    const { limit = 10, offset = 0 } = req.query
+    try {
+      const { limit = 10, offset = 0, availability, genre, city } = req.query
 
-    const tournaments = await TournamentModel.getAll({
-      limit,
-      offset
-    })
+      const tournaments = await TournamentModel.getAll({
+        limit,
+        offset,
+        availability: availability?.toLowerCase(),
+        genre: genre?.toLowerCase(),
+        city: city?.toLowerCase()
+      })
 
-    return res.json(tournaments)
+      return res.json(tournaments)
+    } catch (error) {
+      console.error(error)
+      return res.status(500).json({
+        message: 'Error retrieving tournaments'
+      })
+    }
   }
 
   static async getId(req, res) {

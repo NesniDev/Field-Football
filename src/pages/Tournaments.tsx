@@ -3,13 +3,30 @@ import { useFetchApiTournaments } from '@/hooks/useFetchApi'
 import { Pagination } from '@/components/common/Pagination'
 import { CardTournaments } from '@/components/Cards/CardTournaments'
 import { BreadCrumb } from '@/components/Custom/BreadCrumb'
+import { SelectAlignItem } from '@/components/common/SelectFilter'
 
 export const Tournaments = () => {
-  const { data: infoData, isLoading, limit = 1 } = useFetchApiTournaments()
+  const { data: infoData, isLoading, limit = 1, setSearchParams } = useFetchApiTournaments()
 
   const data = infoData?.data ?? []
   const total = infoData?.total ?? 0
   const totalPages = total > 0 ? Math.ceil(total / limit) : 0
+
+  const handleFilter = (status: string, nameParams: string) => {
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev)
+
+      if (status === 'Todos') {
+        newParams.delete(nameParams)
+      } else {
+        newParams.set(nameParams, status)
+      }
+
+      newParams.set('page', '1')
+
+      return newParams
+  })
+}
 
   return (
     <section className="px-5 mt-6 max-w-5xl mx-auto">
@@ -26,6 +43,23 @@ export const Tournaments = () => {
         Descubre los torneos activos, inscríbete con tu equipo y compite por
         grandes premios. ¡Demuestra tu talento en la cancha!
       </p>
+
+      {/* Filtros */}
+      {
+        !isLoading && (
+          <section className="mt-6 flex gap-2 items-center justify-center">
+            <div className="flex flex-col items-center gap-1.5 text-xs">
+              <SelectAlignItem category='La Disponibilidad' options={['Todos', 'Abierto', 'Finalizado', 'Últimos cupos', 'Próximamente']} onValueChange={(value) => handleFilter(value, 'availability')}/>
+            </div>
+            <div className="flex flex-col items-center gap-1.5 text-xs">
+              <SelectAlignItem category='El Género' options={['Todos', 'Masculino', 'Femenino', 'Mixto']} onValueChange={(value) => handleFilter(value, 'genre')}/>
+            </div>
+            <div className="flex flex-col items-center gap-1.5 text-xs">
+              <SelectAlignItem category='La Ciudad' options={['Todos', 'Chiquinquirá', 'Duitama', 'Tunja', 'Sogamoso', 'Paipa', 'Tibasosa', 'Bucaramanga', 'Nobsa']} onValueChange={(value) => handleFilter(value, 'city')}/>
+            </div>
+          </section>
+        )
+      }
 
       {/* Loading */}
       {isLoading && (
