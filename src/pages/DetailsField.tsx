@@ -19,6 +19,7 @@ export const DetailsField = () => {
 
   if (!info) return
 
+
   return (
     <main className="max-w-5xl mx-auto my-5">
       <div>
@@ -201,8 +202,11 @@ export const DetailsField = () => {
             </div>
 
             <button
-              className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${date.setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) ? 'bg-gray-400/80 text-gray-400 pointer-events-none' : 'bg-green-600'}`}
-              onClick={() => handleReserve(info)}
+              className={`w-full text-white py-2 rounded-lg font-orbitron cursor-pointer ${new Date(date).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) || time === 'Seleccione una hora' ? 'bg-gray-400/80 text-gray-400' : 'bg-green-600'}`}
+              disabled={new Date(date).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) || time === 'Seleccione una hora'}
+              onClick={() => {
+  handleReserve(info);
+}}
             >
               Reservar
             </button>
