@@ -2,6 +2,7 @@ import express from 'express'
 import { corsMiddleware } from './middleware/cors.js'
 import { tournamentsRouter } from './routes/tournaments.js'
 import { fieldsRouter } from './routes/fields.js'
+import { reservationsRouter } from './routes/reservations.js'
 
 const PORT = 3000 ?? 1234
 const app = express()
@@ -10,6 +11,7 @@ app.use(express.json())
 
 app.use('/tournaments', tournamentsRouter)
 app.use('/fields', fieldsRouter)
+app.use('/reservations', reservationsRouter)
 
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
