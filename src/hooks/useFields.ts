@@ -19,7 +19,7 @@ export const useFields = () => {
     setInputValue(searchField)
   }, [searchField])
   
-  const {data, isLoading} = useQuery<InfoField>({
+  const {data, isLoading, error} = useQuery<InfoField>({
     queryKey: ['fields', {page, searchField}],
     queryFn: () => getFieldsAPI(+page, +limit, searchField),
     staleTime: 1000 * 60 * 5
@@ -50,6 +50,7 @@ export const useFields = () => {
     data,
     limit,
     isLoading,
+    error,
     searchField,
     inputValue,
     page,

@@ -11,16 +11,15 @@ export const useFetchApiTournaments = () => {
   const genre = searchParams.get('genre') || ''
   const city = searchParams.get('city') || ''
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ['tournaments', { page, limit, availability, genre, city }],
     queryFn: () => getTournamentsApi(page, limit, availability, genre, city),
     staleTime: 1000 * 60 * 5
   })
 
-  console.log(data)
-
   return {
     isLoading,
+    error,
     data,
     page,
     limit,
