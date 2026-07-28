@@ -44,7 +44,7 @@ export const appRouter = createBrowserRouter([
         element: <Payment />
       },
       {
-        path: 'receipt',
+        path: 'receipt/:id',
         element: <Receipt />
       },
       {
