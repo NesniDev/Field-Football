@@ -81,7 +81,7 @@ export const OfferCard = () => {
           {status === 'success' ? (
             <div className="flex items-center gap-2 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-3">
               <CheckCircle className="size-4 shrink-0" />
-              <p className="text-[0.8125rem] font-medium">¡Listo! Te avisamos cuando haya novedades.</p>
+              <p className="text-[0.8125rem] font-medium">¡Gracias! Próximamente te enviaremos novedades.</p>
             </div>
           ) : (
             <form

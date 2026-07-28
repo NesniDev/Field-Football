@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
     const navigate = useNavigate()
-    const {setInputValue, inputValue, handleSubmit} = useFields()
+    const {setInputValue, inputValue} = useFields()
     
-    const handleSearch = () => {
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        if (!inputValue.trim()) return
         navigate(`/fields?search=${encodeURIComponent(inputValue)}&page=1`)
-  }
+    }
 
     const styles = {
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url(/images/hero.avif)',
@@ -25,9 +27,9 @@ export const Hero = () => {
             <div className="flex flex-col justify-center gap-3 px-5 md:px-0 container max-w-3xl mx-auto h-full text-center font-orbitron">
                 <h1 className="text-3xl px-3 md:text-5xl font-bold capitalize" >Tu próximo partido empieza aquí. Encuentra y reserva tu cancha ideal.</h1>
                 <p className="text-sm">Reserva tu cancha favorita.</p>
-                <form className="flex justify-center items-center gap-2 bg-emerald-50/30 rounded-xl px-2 py-1.5 focus-within:backdrop-blur-xs transition-all duration-300" onSubmit={handleSubmit}>
+                <form className="flex justify-center items-center gap-2 bg-emerald-50/30 rounded-xl px-2 py-1.5 focus-within:backdrop-blur-xs transition-all duration-300" onSubmit={handleSearch}>
                     <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} name="field" type="text" className="w-full h-full outline-none rounded-lg px-3 py-2 bg-white text-gray-800 placeholder:text-gray-400 " placeholder="El Barcelona..." autoComplete="off"/>
-                    <button onClick={handleSearch} type="submit" className="whitespace-nowrap text-sm font-semibold font-orbitron cursor-pointer hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark text-gray-800 bg-btn-dark px-3 py-2 rounded-lg flex-1">Buscar</button>
+                    <button type="submit" className="whitespace-nowrap text-sm font-semibold font-orbitron cursor-pointer hover:bg-btn-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-btn-dark text-gray-800 bg-btn-dark px-3 py-2 rounded-lg flex-1">Buscar</button>
                 </form>
             </div>
         </section>

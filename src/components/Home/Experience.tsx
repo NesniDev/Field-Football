@@ -2,7 +2,7 @@ import { experience } from "@/lib/experience"
 
 export const Experience = () => {
     return (
-        <section className="container mx-auto flex flex-col items-center justify-center gap-y-4 my-20">
+        <section className="container mx-auto flex flex-col items-center justify-center gap-y-4 py-20 px-5">
             <h2 className="text-3xl md:text-5xl font-bold capitalize text-center">¿Cómo funciona?</h2>
             <p className="text-center text-gray-600/70 mx-7 ">Reserva tu cancha en 3 simples pasos. Te ofrecemos la mejor experiencia para que solo te preocupes por jugar.</p>
             <div className="flex justify-center gap-4 items-center flex-wrap mt-6">
