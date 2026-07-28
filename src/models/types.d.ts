@@ -1,24 +1,32 @@
-export interface InfoField{
-    total: number
-    data: Field[]
+export interface InfoField {
+  total: number
+  data: Field[]
 }
 export interface Field {
-    id:              string;
-    image:           string;
-    title:           string;
-    slug:            string;
-    address:         string;
-    description:     string;
-    characteristics: Characteristics;
-    services:        string[];
-    punctuation:     number;
-    price:           number;
-    ubication:       string;
+  id: string
+  image: string
+  title: string
+  slug: string
+  address: string
+  description: string
+  characteristics: Characteristics
+  services: string[]
+  punctuation: number
+  price: number
+  ubication: string
 }
 
 export interface Characteristics {
-    grassType:    string;
-    dimensions:   string;
-    lighting:     string;
-    availability: string;
+  grassType: string
+  dimensions: string
+  lighting: string
+  availability: string
+}
+
+export interface ReservationItem {
+  id: number
+  field: Field
+  reservationDate: string
+  startTime: string
+  price: number
 }
