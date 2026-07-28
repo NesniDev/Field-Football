@@ -1,23 +1,36 @@
-import { useReservationStore } from "@/store/useReservationStore"
+import { useReservationStore } from '@/store/useReservationStore'
 
-
+const months = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre'
+]
 
 export const useReservations = () => {
-  const {selectedField, reservationDate, startTime, price} = useReservationStore()
+  const { reservations } = useReservationStore()
 
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-
-
-    const fieldName = selectedField ? selectedField.title : "No se selecciono una cancha"
-    const fieldImage = selectedField ? selectedField.image : 'No se selecciono una cancha' 
-    // const fieldAddress = selectedField ? selectedField.address : ""
-    const formattedDate = reservationDate ? `${reservationDate.getDate()} de ${months[reservationDate.getMonth()]} de ${reservationDate.getFullYear()}` : 'Fecha no seleccionada';
-
+  const formattedReservations = reservations.map((r) => {
+    const date = new Date(r.reservationDate)
     return {
-      startTime,
-      price,
-      fieldName,
-      fieldImage,
-      formattedDate,
+      id: r.id,
+      fieldName: r.field.title,
+      fieldImage: r.field.image,
+      formattedDate: `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`,
+      startTime: r.startTime,
+      price: r.price
     }
+  })
+
+  return {
+    reservations: formattedReservations
+  }
 }
